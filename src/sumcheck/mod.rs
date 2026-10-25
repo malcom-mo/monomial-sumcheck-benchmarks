@@ -45,6 +45,8 @@ mod fp128;
 mod generic;
 mod gf128;
 #[cfg(test)]
+mod projective_different_claims_tests;
+#[cfg(test)]
 mod round_message_tests;
 
 pub use bb5_packed::*;

@@ -130,3 +130,10 @@ cd artifacts/data
 python3 ../../scripts/paper_tables.py --out /tmp/paper-tables \
   $(grep -v '^#' ../../docs/paper-runs.txt)
 ```
+
+## Weighted projective comparison
+
+`projective-different-claims` and `projective-different-claims-delayed` preweight
+one polynomial during the first evaluation pass, then use two-value projective
+rounds. Their terminal values are `f(a*r)` and `g(r)`. Preweighting is timed.
+See [the implementation notes and operation counts](docs/projective-different-claims.md).

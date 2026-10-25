@@ -582,3 +582,171 @@ pub fn sumcheck_deg2_eq_projective_1inf_delayed_fp128(
         g.truncate(half);
     }
 }
+
+pub fn sumcheck_deg2_eq_projective_different_claims_fp128(
+    f: &mut Vec<Fp128>,
+    g: &mut Vec<Fp128>,
+    suffix_eq: &[Vec<Fp128>],
+    challenges: &[Fp128],
+    zero: Fp128,
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = zero;
+    let mut h_inf = zero;
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        h1 += (f0 + fi) * (g0 + gi);
+        h_inf += fi * gi;
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1, h_inf));
+
+    let r = challenges[0];
+
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        f[j] = fi.mul_add(r, f0);
+        g[j] = gi.mul_add(r, g0);
+    }
+
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_fp128(f, g, &challenges[1..], zero);
+}
+
+pub fn sumcheck_deg2_eq_projective_different_claims_delayed_fp128(
+    f: &mut Vec<Fp128>,
+    g: &mut Vec<Fp128>,
+    suffix_eq: &[Vec<Fp128>],
+    challenges: &[Fp128],
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = Fp128Accum::zero();
+    let mut h_inf = Fp128Accum::zero();
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        h1.fmadd(f0 + fi, g0 + gi);
+        h_inf.fmadd(fi, gi);
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1.reduce(), h_inf.reduce()));
+
+    let r = challenges[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        f[j] = fi.mul_add(r, f0);
+        g[j] = gi.mul_add(r, g0);
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_delayed_fp128(f, g, &challenges[1..]);
+}
+
+pub(super) fn projective_different_claims_tail_fp128(
+    f: &mut Vec<Fp128>,
+    g: &mut Vec<Fp128>,
+    challenges: &[Fp128],
+    zero: Fp128,
+) {
+    for round in 0..challenges.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = zero;
+        let mut h_inf = zero;
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            h1 += (f0 + fi) * (g0 + gi);
+            h_inf += fi * gi;
+        }
+
+        round_message((h1, h_inf));
+
+        let r = challenges[round];
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            f[j] = fi.mul_add(r, f0);
+            g[j] = gi.mul_add(r, g0);
+        }
+
+        f.truncate(half);
+        g.truncate(half);
+    }
+}
+
+pub(super) fn projective_different_claims_tail_delayed_fp128(
+    f: &mut Vec<Fp128>,
+    g: &mut Vec<Fp128>,
+    challenges: &[Fp128],
+) {
+    for round in 0..challenges.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = Fp128Accum::zero();
+        let mut h_inf = Fp128Accum::zero();
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            h1.fmadd(f0 + fi, g0 + gi);
+            h_inf.fmadd(fi, gi);
+        }
+
+        round_message((h1.reduce(), h_inf.reduce()));
+
+        let r = challenges[round];
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            f[j] = fi.mul_add(r, f0);
+            g[j] = gi.mul_add(r, g0);
+        }
+        f.truncate(half);
+        g.truncate(half);
+    }
+}

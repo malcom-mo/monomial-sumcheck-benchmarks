@@ -33,6 +33,7 @@ fn bench_bn254(c: &mut Criterion) {
                                         &challenges,
                                         BN254Fr::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -44,6 +45,7 @@ fn bench_bn254(c: &mut Criterion) {
                                 || (f_orig.clone(), g_orig.clone()),
                                 |(mut f, mut g)| {
                                     sumcheck_deg2_delayed_bn254(&mut f, &mut g, &challenges);
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -60,6 +62,7 @@ fn bench_bn254(c: &mut Criterion) {
                                         &challenges,
                                         BN254Fr::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -75,11 +78,13 @@ fn bench_bn254(c: &mut Criterion) {
                                         &mut g,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
                     _ => unreachable!(),
                 }
             }
@@ -99,7 +104,7 @@ fn bench_bn254(c: &mut Criterion) {
             let suffix_eq_projective =
                 build_suffix_eq_tables_projective(&eq_point, BN254Fr::from(1u64));
 
-            let mut order = [0usize, 1, 2, 3];
+            let mut order = [0usize, 1, 2, 3, 4, 5];
             order.shuffle(&mut rand::thread_rng());
             for &idx in &order {
                 match idx {
@@ -115,6 +120,7 @@ fn bench_bn254(c: &mut Criterion) {
                                         &challenges,
                                         BN254Fr::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -131,6 +137,7 @@ fn bench_bn254(c: &mut Criterion) {
                                         &suffix_eq_boolean,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -148,6 +155,7 @@ fn bench_bn254(c: &mut Criterion) {
                                         &challenges,
                                         BN254Fr::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -164,11 +172,57 @@ fn bench_bn254(c: &mut Criterion) {
                                         &suffix_eq_projective,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
+                    4 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                            BN254Fr::ZERO,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+                    5 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims-delayed", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_delayed_bn254(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+
                     _ => unreachable!(),
                 }
             }
@@ -205,6 +259,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &challenges,
                                         Bn254BranchFree::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -220,6 +275,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &mut g,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -236,6 +292,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &challenges,
                                         Bn254BranchFree::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -251,11 +308,13 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &mut g,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
                     _ => unreachable!(),
                 }
             }
@@ -275,7 +334,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
             let suffix_eq_projective =
                 build_suffix_eq_tables_projective(&eq_point, Bn254BranchFree::ONE);
 
-            let mut order = [0usize, 1, 2, 3];
+            let mut order = [0usize, 1, 2, 3, 4, 5];
             order.shuffle(&mut rand::thread_rng());
             for &idx in &order {
                 match idx {
@@ -291,6 +350,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &challenges,
                                         Bn254BranchFree::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -307,6 +367,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &suffix_eq_boolean,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -324,6 +385,7 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &challenges,
                                         Bn254BranchFree::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -340,11 +402,57 @@ fn bench_bn254_branch_free(c: &mut Criterion) {
                                         &suffix_eq_projective,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
+                    4 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                            Bn254BranchFree::ZERO,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+                    5 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims-delayed", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_delayed_bn254_generic(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+
                     _ => unreachable!(),
                 }
             }
@@ -378,6 +486,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &mut g,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -393,6 +502,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &mut g,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -408,6 +518,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &mut g,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -423,11 +534,13 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &mut g,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
                     _ => unreachable!(),
                 }
             }
@@ -446,7 +559,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
             let suffix_eq_projective =
                 build_suffix_eq_tables_projective(&eq_point, BN254Fr::from(1u64));
 
-            let mut order = [0usize, 1, 2, 3];
+            let mut order = [0usize, 1, 2, 3, 4, 5];
             order.shuffle(&mut rand::thread_rng());
             for &idx in &order {
                 match idx {
@@ -461,6 +574,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &suffix_eq_boolean,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -477,6 +591,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &suffix_eq_boolean,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -493,6 +608,7 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &suffix_eq_projective,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -509,11 +625,56 @@ fn bench_bn254_upper(c: &mut Criterion) {
                                         &suffix_eq_projective,
                                         &challenge_limbs,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
+                    4 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_bn254_upper(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenge_limbs,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+                    5 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims-delayed", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_delayed_bn254_upper(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenge_limbs,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+
                     _ => unreachable!(),
                 }
             }
@@ -527,6 +688,7 @@ macro_rules! bench_bb_field {
      $delayed_fn:ident, $delayed_eq_fn:ident,
      $proj_delayed_fn:ident, $proj_delayed_eq_fn:ident,
      $eq_boolean_fn:ident, $eq_projective_fn:ident,
+     $eq_different_claims_fn:ident, $different_claims_delayed_eq_fn:ident,
      $ns:expr, $c:expr) => {{
         {
             let mut group = $c.benchmark_group(concat!("sumcheck_deg2/", $field_label));
@@ -546,6 +708,7 @@ macro_rules! bench_bb_field {
                                     || (f_orig.clone(), g_orig.clone()),
                                     |(mut f, mut g)| {
                                         sumcheck_deg2_boolean(&mut f, &mut g, &challenges, $zero);
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
@@ -557,6 +720,7 @@ macro_rules! bench_bb_field {
                                     || (f_orig.clone(), g_orig.clone()),
                                     |(mut f, mut g)| {
                                         $delayed_fn(&mut f, &mut g, &challenges);
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
@@ -576,6 +740,7 @@ macro_rules! bench_bb_field {
                                                 &challenges,
                                                 $zero,
                                             );
+                                            let _ = criterion::black_box((f[0], g[0]));
                                         },
                                         criterion::BatchSize::LargeInput,
                                     )
@@ -591,12 +756,14 @@ macro_rules! bench_bb_field {
                                         || (f_orig.clone(), g_orig.clone()),
                                         |(mut f, mut g)| {
                                             $proj_delayed_fn(&mut f, &mut g, &challenges);
+                                            let _ = criterion::black_box((f[0], g[0]));
                                         },
                                         criterion::BatchSize::LargeInput,
                                     )
                                 },
                             );
                         }
+
                         _ => unreachable!(),
                     }
                 }
@@ -614,7 +781,7 @@ macro_rules! bench_bb_field {
                 let suffix_eq_boolean = build_suffix_eq_tables(&eq_point, $one);
                 let suffix_eq_projective = build_suffix_eq_tables_projective(&eq_point, $one);
 
-                let mut order = [0usize, 1, 2, 3];
+                let mut order = [0usize, 1, 2, 3, 4, 5];
                 order.shuffle(&mut rand::thread_rng());
                 for &idx in &order {
                     match idx {
@@ -630,6 +797,7 @@ macro_rules! bench_bb_field {
                                             &challenges,
                                             $zero,
                                         );
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
@@ -646,6 +814,7 @@ macro_rules! bench_bb_field {
                                             &suffix_eq_boolean,
                                             &challenges,
                                         );
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
@@ -666,6 +835,7 @@ macro_rules! bench_bb_field {
                                                 &challenges,
                                                 $zero,
                                             );
+                                            let _ = criterion::black_box((f[0], g[0]));
                                         },
                                         criterion::BatchSize::LargeInput,
                                     )
@@ -686,12 +856,58 @@ macro_rules! bench_bb_field {
                                                 &suffix_eq_projective,
                                                 &challenges,
                                             );
+                                            let _ = criterion::black_box((f[0], g[0]));
                                         },
                                         criterion::BatchSize::LargeInput,
                                     )
                                 },
                             );
                         }
+
+                        4 => {
+                            group.bench_with_input(
+                                BenchmarkId::new("projective-different-claims", n),
+                                &n,
+                                |b, _| {
+                                    b.iter_batched(
+                                        || (f_orig.clone(), g_orig.clone()),
+                                        |(mut f, mut g)| {
+                                            $eq_different_claims_fn(
+                                                &mut f,
+                                                &mut g,
+                                                &suffix_eq_projective,
+                                                &challenges,
+                                                $zero,
+                                            );
+                                            let _ = criterion::black_box((f[0], g[0]));
+                                        },
+                                        criterion::BatchSize::LargeInput,
+                                    )
+                                },
+                            );
+                        }
+                        5 => {
+                            group.bench_with_input(
+                                BenchmarkId::new("projective-different-claims-delayed", n),
+                                &n,
+                                |b, _| {
+                                    b.iter_batched(
+                                        || (f_orig.clone(), g_orig.clone()),
+                                        |(mut f, mut g)| {
+                                            $different_claims_delayed_eq_fn(
+                                                &mut f,
+                                                &mut g,
+                                                &suffix_eq_projective,
+                                                &challenges,
+                                            );
+                                            let _ = criterion::black_box((f[0], g[0]));
+                                        },
+                                        criterion::BatchSize::LargeInput,
+                                    )
+                                },
+                            );
+                        }
+
                         _ => unreachable!(),
                     }
                 }
@@ -715,6 +931,8 @@ fn bench_bb4(c: &mut Criterion) {
         sumcheck_deg2_eq_projective_delayed_bb4,
         sumcheck_deg2_eq_gruen_boolean,
         sumcheck_deg2_eq_gruen_projective,
+        sumcheck_deg2_eq_projective_different_claims,
+        sumcheck_deg2_eq_projective_different_claims_delayed_bb4,
         ns,
         c
     );
@@ -734,6 +952,8 @@ fn bench_bb5(c: &mut Criterion) {
         sumcheck_deg2_eq_projective_delayed_bb5_packed,
         sumcheck_deg2_eq_gruen_boolean_bb5,
         sumcheck_deg2_eq_gruen_projective_bb5,
+        sumcheck_deg2_eq_projective_different_claims_bb5,
+        sumcheck_deg2_eq_projective_different_claims_delayed_bb5_packed,
         ns,
         c
     );
@@ -753,6 +973,8 @@ fn bench_kb5(c: &mut Criterion) {
         sumcheck_deg2_eq_projective_delayed_kb5,
         sumcheck_deg2_eq_gruen_boolean,
         sumcheck_deg2_eq_gruen_projective,
+        sumcheck_deg2_eq_projective_different_claims,
+        sumcheck_deg2_eq_projective_different_claims_delayed_kb5,
         ns,
         c
     );
@@ -783,6 +1005,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &challenges,
                                         Fp128::zero(),
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -794,6 +1017,7 @@ fn bench_fp128(c: &mut Criterion) {
                                 || (f_orig.clone(), g_orig.clone()),
                                 |(mut f, mut g)| {
                                     sumcheck_deg2_delayed_fp128(&mut f, &mut g, &challenges);
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -810,6 +1034,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &challenges,
                                         Fp128::zero(),
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -829,6 +1054,7 @@ fn bench_fp128(c: &mut Criterion) {
                                             &challenges,
                                             Fp128::zero(),
                                         );
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
@@ -845,6 +1071,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &mut g,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -863,12 +1090,14 @@ fn bench_fp128(c: &mut Criterion) {
                                             &mut g,
                                             &challenges,
                                         );
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
                             },
                         );
                     }
+
                     _ => unreachable!(),
                 }
             }
@@ -887,7 +1116,7 @@ fn bench_fp128(c: &mut Criterion) {
             let suffix_eq_boolean = build_suffix_eq_tables(&eq_point, Fp128::one());
             let suffix_eq_projective = build_suffix_eq_tables_projective(&eq_point, Fp128::one());
 
-            let mut order = [0usize, 1, 2, 3, 4, 5];
+            let mut order = [0usize, 1, 2, 3, 4, 5, 6, 7];
             order.shuffle(&mut rand::thread_rng());
             for &idx in &order {
                 match idx {
@@ -903,6 +1132,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &challenges,
                                         Fp128::zero(),
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -919,6 +1149,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &suffix_eq_boolean,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -936,6 +1167,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &challenges,
                                         Fp128::zero(),
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -956,6 +1188,7 @@ fn bench_fp128(c: &mut Criterion) {
                                             &challenges,
                                             Fp128::zero(),
                                         );
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
@@ -973,6 +1206,7 @@ fn bench_fp128(c: &mut Criterion) {
                                         &suffix_eq_projective,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -992,12 +1226,58 @@ fn bench_fp128(c: &mut Criterion) {
                                             &suffix_eq_projective,
                                             &challenges,
                                         );
+                                        let _ = criterion::black_box((f[0], g[0]));
                                     },
                                     criterion::BatchSize::LargeInput,
                                 )
                             },
                         );
                     }
+
+                    6 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_fp128(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                            Fp128::zero(),
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+                    7 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims-delayed", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_delayed_fp128(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+
                     _ => unreachable!(),
                 }
             }
@@ -1026,6 +1306,7 @@ fn bench_gf128(c: &mut Criterion) {
                                 || (f_orig.clone(), g_orig.clone()),
                                 |(mut f, mut g)| {
                                     sumcheck_deg2_boolean(&mut f, &mut g, &challenges, GF128::ZERO);
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -1037,6 +1318,7 @@ fn bench_gf128(c: &mut Criterion) {
                                 || (f_orig.clone(), g_orig.clone()),
                                 |(mut f, mut g)| {
                                     sumcheck_deg2_delayed_gf128(&mut f, &mut g, &challenges);
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -1053,6 +1335,7 @@ fn bench_gf128(c: &mut Criterion) {
                                         &challenges,
                                         GF128::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -1068,11 +1351,13 @@ fn bench_gf128(c: &mut Criterion) {
                                         &mut g,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
                     _ => unreachable!(),
                 }
             }
@@ -1091,7 +1376,7 @@ fn bench_gf128(c: &mut Criterion) {
             let suffix_eq_boolean = build_suffix_eq_tables(&eq_point, GF128::ONE);
             let suffix_eq_projective = build_suffix_eq_tables_projective(&eq_point, GF128::ONE);
 
-            let mut order = [0usize, 1, 2, 3];
+            let mut order = [0usize, 1, 2, 3, 4, 5];
             order.shuffle(&mut rand::thread_rng());
             for &idx in &order {
                 match idx {
@@ -1107,6 +1392,7 @@ fn bench_gf128(c: &mut Criterion) {
                                         &challenges,
                                         GF128::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -1123,6 +1409,7 @@ fn bench_gf128(c: &mut Criterion) {
                                         &suffix_eq_boolean,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -1140,6 +1427,7 @@ fn bench_gf128(c: &mut Criterion) {
                                         &challenges,
                                         GF128::ZERO,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
@@ -1156,11 +1444,57 @@ fn bench_gf128(c: &mut Criterion) {
                                         &suffix_eq_projective,
                                         &challenges,
                                     );
+                                    let _ = criterion::black_box((f[0], g[0]));
                                 },
                                 criterion::BatchSize::LargeInput,
                             )
                         });
                     }
+
+                    4 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                            GF128::ZERO,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+                    5 => {
+                        group.bench_with_input(
+                            BenchmarkId::new("projective-different-claims-delayed", n),
+                            &n,
+                            |b, _| {
+                                b.iter_batched(
+                                    || (f_orig.clone(), g_orig.clone()),
+                                    |(mut f, mut g)| {
+                                        sumcheck_deg2_eq_projective_different_claims_delayed_gf128(
+                                            &mut f,
+                                            &mut g,
+                                            &suffix_eq_projective,
+                                            &challenges,
+                                        );
+                                        let _ = criterion::black_box((f[0], g[0]));
+                                    },
+                                    criterion::BatchSize::LargeInput,
+                                )
+                            },
+                        );
+                    }
+
                     _ => unreachable!(),
                 }
             }

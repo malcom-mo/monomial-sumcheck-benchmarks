@@ -255,3 +255,83 @@ pub fn sumcheck_deg2_eq_projective_delayed_gf128(
         g.truncate(half);
     }
 }
+
+pub fn sumcheck_deg2_eq_projective_different_claims_delayed_gf128(
+    f: &mut Vec<GF128>,
+    g: &mut Vec<GF128>,
+    suffix_eq: &[Vec<GF128>],
+    challenges: &[GF128],
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = GF128Accum::zero();
+    let mut h_inf = GF128Accum::zero();
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        h_inf.fmadd(fi, gi);
+        h1.fmadd(f0 + fi, g0 + gi);
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1.reduce(), h_inf.reduce()));
+
+    let r = challenges[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        f[j] = f0 + r * fi;
+        g[j] = g0 + r * gi;
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_delayed_gf128(f, g, &challenges[1..]);
+}
+
+pub(super) fn projective_different_claims_tail_delayed_gf128(
+    f: &mut Vec<GF128>,
+    g: &mut Vec<GF128>,
+    challenges: &[GF128],
+) {
+    for round in 0..challenges.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = GF128Accum::zero();
+        let mut h_inf = GF128Accum::zero();
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            h_inf.fmadd(fi, gi);
+            h1.fmadd(f0 + fi, g0 + gi);
+        }
+
+        round_message((h1.reduce(), h_inf.reduce()));
+
+        let r = challenges[round];
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            f[j] = f0 + r * fi;
+            g[j] = g0 + r * gi;
+        }
+        f.truncate(half);
+        g.truncate(half);
+    }
+}

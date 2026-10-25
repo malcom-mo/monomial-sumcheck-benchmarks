@@ -1145,3 +1145,323 @@ mod tests {
         assert_eq!(unwrap_branch_free(g_bf), g);
     }
 }
+
+pub fn sumcheck_deg2_eq_projective_different_claims_delayed_bn254(
+    f: &mut Vec<BN254Fr>,
+    g: &mut Vec<BN254Fr>,
+    suffix_eq: &[Vec<BN254Fr>],
+    challenges: &[BN254Fr],
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = BN254Accum::zero();
+    let mut h_inf = BN254Accum::zero();
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        h1.fmadd(f0 + fi, g0 + gi);
+        h_inf.fmadd(fi, gi);
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1.reduce(), h_inf.reduce()));
+
+    let r = challenges[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        f[j] = f0 + r * fi;
+        g[j] = g0 + r * gi;
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_delayed_bn254(f, g, &challenges[1..]);
+}
+
+pub fn sumcheck_deg2_eq_projective_different_claims_delayed_bn254_generic<F: Bn254Element>(
+    f: &mut Vec<F>,
+    g: &mut Vec<F>,
+    suffix_eq: &[Vec<F>],
+    challenges: &[F],
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = BN254Accum::zero();
+    let mut h_inf = BN254Accum::zero();
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        h1.fmadd((f0 + fi).to_fr(), (g0 + gi).to_fr());
+        h_inf.fmadd(fi.to_fr(), gi.to_fr());
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1.reduce(), h_inf.reduce()));
+
+    let r = challenges[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        f[j] = f0 + r * fi;
+        g[j] = g0 + r * gi;
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_delayed_bn254_generic(f, g, &challenges[1..]);
+}
+
+pub fn sumcheck_deg2_eq_projective_different_claims_bn254_upper(
+    f: &mut Vec<BN254Fr>,
+    g: &mut Vec<BN254Fr>,
+    suffix_eq: &[Vec<BN254Fr>],
+    challenge_limbs: &[(u64, u64)],
+) {
+    if challenge_limbs.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = BN254Fr::ZERO;
+    let mut h_inf = BN254Fr::ZERO;
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        h_inf += fi * gi;
+        h1 += (f0 + fi) * (g0 + gi);
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1, h_inf));
+
+    let (r_lo, r_hi) = challenge_limbs[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        f[j] = f0 + fi.mul_by_hi_2limbs(r_lo, r_hi);
+        g[j] = g0 + gi.mul_by_hi_2limbs(r_lo, r_hi);
+    }
+
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_bn254_upper(f, g, &challenge_limbs[1..]);
+}
+
+pub fn sumcheck_deg2_eq_projective_different_claims_delayed_bn254_upper(
+    f: &mut Vec<BN254Fr>,
+    g: &mut Vec<BN254Fr>,
+    suffix_eq: &[Vec<BN254Fr>],
+    challenge_limbs: &[(u64, u64)],
+) {
+    if challenge_limbs.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+
+    let mut h1 = BN254Accum::zero();
+    let mut h_inf = BN254Accum::zero();
+
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let fi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        h1.fmadd(f0 + fi, g0 + gi);
+        h_inf.fmadd(fi, gi);
+        f[2 * j] = f0;
+        f[2 * j + 1] = fi;
+    }
+
+    round_message((h1.reduce(), h_inf.reduce()));
+
+    let (r_lo, r_hi) = challenge_limbs[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+
+        f[j] = f0 + fi.mul_by_hi_2limbs(r_lo, r_hi);
+        g[j] = g0 + gi.mul_by_hi_2limbs(r_lo, r_hi);
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_delayed_bn254_upper(f, g, &challenge_limbs[1..]);
+}
+
+pub(super) fn projective_different_claims_tail_delayed_bn254(
+    f: &mut Vec<BN254Fr>,
+    g: &mut Vec<BN254Fr>,
+    challenges: &[BN254Fr],
+) {
+    for round in 0..challenges.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = BN254Accum::zero();
+        let mut h_inf = BN254Accum::zero();
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            h1.fmadd(f0 + fi, g0 + gi);
+            h_inf.fmadd(fi, gi);
+        }
+
+        round_message((h1.reduce(), h_inf.reduce()));
+
+        let r = challenges[round];
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            f[j] = f0 + r * fi;
+            g[j] = g0 + r * gi;
+        }
+        f.truncate(half);
+        g.truncate(half);
+    }
+}
+
+pub(super) fn projective_different_claims_tail_delayed_bn254_generic<F: Bn254Element>(
+    f: &mut Vec<F>,
+    g: &mut Vec<F>,
+    challenges: &[F],
+) {
+    for round in 0..challenges.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = BN254Accum::zero();
+        let mut h_inf = BN254Accum::zero();
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            h1.fmadd((f0 + fi).to_fr(), (g0 + gi).to_fr());
+            h_inf.fmadd(fi.to_fr(), gi.to_fr());
+        }
+
+        round_message((h1.reduce(), h_inf.reduce()));
+
+        let r = challenges[round];
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            f[j] = f0 + r * fi;
+            g[j] = g0 + r * gi;
+        }
+        f.truncate(half);
+        g.truncate(half);
+    }
+}
+
+pub(super) fn projective_different_claims_tail_bn254_upper(
+    f: &mut Vec<BN254Fr>,
+    g: &mut Vec<BN254Fr>,
+    challenge_limbs: &[(u64, u64)],
+) {
+    for round in 0..challenge_limbs.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = BN254Fr::ZERO;
+        let mut h_inf = BN254Fr::ZERO;
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            h_inf += fi * gi;
+            h1 += (f0 + fi) * (g0 + gi);
+        }
+
+        round_message((h1, h_inf));
+
+        let (r_lo, r_hi) = challenge_limbs[round];
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            f[j] = f0 + fi.mul_by_hi_2limbs(r_lo, r_hi);
+            g[j] = g0 + gi.mul_by_hi_2limbs(r_lo, r_hi);
+        }
+
+        f.truncate(half);
+        g.truncate(half);
+    }
+}
+
+pub(super) fn projective_different_claims_tail_delayed_bn254_upper(
+    f: &mut Vec<BN254Fr>,
+    g: &mut Vec<BN254Fr>,
+    challenge_limbs: &[(u64, u64)],
+) {
+    for round in 0..challenge_limbs.len() {
+        let half = f.len() / 2;
+
+        let mut h1 = BN254Accum::zero();
+        let mut h_inf = BN254Accum::zero();
+
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+            h1.fmadd(f0 + fi, g0 + gi);
+            h_inf.fmadd(fi, gi);
+        }
+
+        round_message((h1.reduce(), h_inf.reduce()));
+
+        let (r_lo, r_hi) = challenge_limbs[round];
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let fi = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let gi = g[2 * j + 1];
+
+            f[j] = f0 + fi.mul_by_hi_2limbs(r_lo, r_hi);
+            g[j] = g0 + gi.mul_by_hi_2limbs(r_lo, r_hi);
+        }
+        f.truncate(half);
+        g.truncate(half);
+    }
+}

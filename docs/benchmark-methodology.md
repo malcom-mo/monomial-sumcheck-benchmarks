@@ -17,6 +17,12 @@ serialization, challenge derivation, and polynomial-commitment openings.
 Paper text must call this measurement a complete prover kernel, not an
 end-to-end prover.
 
+The weighted `projective-different-claims` variants include first-round
+preweighting and use two-value projective rounds. Their terminal opening points
+differ from the ordinary weighted projective cases; see
+[projective-different-claims.md](projective-different-claims.md). Both final
+polynomial values pass through an optimizer barrier for every sumcheck case.
+
 ## Inputs
 
 Tables, challenges, and equality points are pseudorandom and deterministic.

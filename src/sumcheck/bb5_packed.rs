@@ -531,3 +531,147 @@ pub fn sumcheck_deg2_eq_projective_delayed_bb5_packed(
         g.truncate(half);
     }
 }
+
+fn bb5_projective_preweighted_stored_eval(f: &mut [BB5], g: &[BB5], weights: &[BB5]) -> (BB5, BB5) {
+    let half = f.len() / 2;
+    let mut h1 = BB5::ZERO;
+    let mut h_inf = BB5::ZERO;
+    #[cfg(all(target_arch = "aarch64", target_feature = "neon"))]
+    let packed_end = half / BB5_PACK_WIDTH * BB5_PACK_WIDTH;
+    #[cfg(not(all(target_arch = "aarch64", target_feature = "neon")))]
+    let packed_end = 0;
+    #[cfg(all(target_arch = "aarch64", target_feature = "neon"))]
+    {
+        let mut h1_packed = PackedBB5::ZERO;
+        let mut h_inf_packed = PackedBB5::ZERO;
+        for j in (0..packed_end).step_by(BB5_PACK_WIDTH) {
+            let f0 = pack_bb5_chunk(core::array::from_fn(|lane| f[2 * (j + lane)]));
+            let fi = pack_bb5_chunk(core::array::from_fn(|lane| f[2 * (j + lane) + 1]));
+            let g0 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane)]));
+            let gi = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane) + 1]));
+            let wf0 = f0 * pack_bb5_chunk(core::array::from_fn(|lane| weights[2 * (j + lane)]));
+            let wfi = fi * pack_bb5_chunk(core::array::from_fn(|lane| weights[2 * (j + lane) + 1]));
+            h_inf_packed += wfi * gi;
+            h1_packed += (wf0 + wfi) * (g0 + gi);
+            for lane in 0..BB5_PACK_WIDTH {
+                f[2 * (j + lane)] =
+                    <PackedBB5 as PackedFieldExtension<BabyBear, BB5>>::extract(&wf0, lane);
+                f[2 * (j + lane) + 1] =
+                    <PackedBB5 as PackedFieldExtension<BabyBear, BB5>>::extract(&wfi, lane);
+            }
+        }
+        h1 += sum_packed_bb5(h1_packed);
+        h_inf += sum_packed_bb5(h_inf_packed);
+    }
+    for j in packed_end..half {
+        let wf0 = f[2 * j] * weights[2 * j];
+        let wfi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        h_inf += wfi * gi;
+        h1 += (wf0 + wfi) * (g0 + gi);
+        f[2 * j] = wf0;
+        f[2 * j + 1] = wfi;
+    }
+    (h1, h_inf)
+}
+
+pub fn sumcheck_deg2_eq_projective_different_claims_bb5(
+    f: &mut Vec<BB5>,
+    g: &mut Vec<BB5>,
+    suffix_eq: &[Vec<BB5>],
+    challenges: &[BB5],
+    zero: BB5,
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+
+    let (h1, h_inf) = bb5_projective_preweighted_stored_eval(f, g, &suffix_eq[0]);
+    round_message((h1, h_inf));
+    let r = challenges[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let f1 = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let g1 = g[2 * j + 1];
+        f[j] = f0 + r * f1;
+        g[j] = g0 + r * g1;
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail(f, g, &challenges[1..], zero);
+}
+
+fn bb5_projective_preweighted_stored_delayed_eval(
+    f: &mut [BB5],
+    g: &[BB5],
+    weights: &[BB5],
+) -> (BB5Accum, BB5Accum) {
+    let half = f.len() / 2;
+    let mut h1 = BB5Accum::zero();
+    let mut h_inf = BB5Accum::zero();
+    #[cfg(all(target_arch = "aarch64", target_feature = "neon"))]
+    let packed_end = half / BB5_PACK_WIDTH * BB5_PACK_WIDTH;
+    #[cfg(not(all(target_arch = "aarch64", target_feature = "neon")))]
+    let packed_end = 0;
+    #[cfg(all(target_arch = "aarch64", target_feature = "neon"))]
+    {
+        for j in (0..packed_end).step_by(BB5_PACK_WIDTH) {
+            let f0 = pack_bb5_chunk(core::array::from_fn(|lane| f[2 * (j + lane)]));
+            let fi = pack_bb5_chunk(core::array::from_fn(|lane| f[2 * (j + lane) + 1]));
+            let g0 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane)]));
+            let gi = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane) + 1]));
+            let wf0 = f0 * pack_bb5_chunk(core::array::from_fn(|lane| weights[2 * (j + lane)]));
+            let wfi = fi * pack_bb5_chunk(core::array::from_fn(|lane| weights[2 * (j + lane) + 1]));
+            bb5_accum_fmadd_packed(&mut h_inf, wfi, gi);
+            bb5_accum_fmadd_packed(&mut h1, wf0 + wfi, g0 + gi);
+            for lane in 0..BB5_PACK_WIDTH {
+                f[2 * (j + lane)] =
+                    <PackedBB5 as PackedFieldExtension<BabyBear, BB5>>::extract(&wf0, lane);
+                f[2 * (j + lane) + 1] =
+                    <PackedBB5 as PackedFieldExtension<BabyBear, BB5>>::extract(&wfi, lane);
+            }
+        }
+    }
+    for j in packed_end..half {
+        let wf0 = f[2 * j] * weights[2 * j];
+        let wfi = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        h_inf.fmadd(wfi, gi);
+        h1.fmadd(wf0 + wfi, g0 + gi);
+        f[2 * j] = wf0;
+        f[2 * j + 1] = wfi;
+    }
+    (h1, h_inf)
+}
+
+pub fn sumcheck_deg2_eq_projective_different_claims_delayed_bb5_packed(
+    f: &mut Vec<BB5>,
+    g: &mut Vec<BB5>,
+    suffix_eq: &[Vec<BB5>],
+    challenges: &[BB5],
+) {
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+
+    let (h1, h_inf) = bb5_projective_preweighted_stored_delayed_eval(f, g, &suffix_eq[0]);
+    round_message((h1.reduce(), h_inf.reduce()));
+    let r = challenges[0];
+    let mul_r = BB5MulByConst::new(r);
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let fi = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let gi = g[2 * j + 1];
+        f[j] = f0 + mul_r.apply(fi);
+        g[j] = g0 + mul_r.apply(gi);
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail_delayed_bb5(f, g, &challenges[1..]);
+}

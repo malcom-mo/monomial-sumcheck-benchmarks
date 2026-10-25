@@ -701,3 +701,82 @@ mod tests {
         }
     }
 }
+
+macro_rules! projective_different_claims_delayed_fns {
+    ($field:ty, $accum:ty, $mul_by_const:ty, $suffix:ident) => {
+        paste::paste! {
+            pub(super) fn [<projective_different_claims_tail_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) {
+                for round in 0..challenges.len() {
+                    let half = f.len() / 2;
+                    let mut h1 = <$accum>::zero();
+                    let mut h_inf = <$accum>::zero();
+                    for j in 0..half {
+                        let f0 = f[2 * j];
+                        let fi = f[2 * j + 1];
+                        let g0 = g[2 * j];
+                        let gi = g[2 * j + 1];
+                        h1.fmadd(f0 + fi, g0 + gi);
+                        h_inf.fmadd(fi, gi);
+                    }
+                    round_message((h1.reduce(), h_inf.reduce()));
+                    let r = challenges[round];
+                    let mul_r = <$mul_by_const>::new(r);
+                    for j in 0..half {
+                        let f0 = f[2 * j];
+                        let fi = f[2 * j + 1];
+                        let g0 = g[2 * j];
+                        let gi = g[2 * j + 1];
+                        f[j] = f0 + mul_r.apply(fi);
+                        g[j] = g0 + mul_r.apply(gi);
+                    }
+                    f.truncate(half);
+                    g.truncate(half);
+                }
+            }
+
+            pub fn [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) {
+                if challenges.is_empty() { return; }
+                let half = f.len() / 2;
+                let weights = &suffix_eq[0];
+                let mut h1 = <$accum>::zero();
+                let mut h_inf = <$accum>::zero();
+                for j in 0..half {
+                    let f0 = f[2 * j] * weights[2 * j];
+                    let fi = f[2 * j + 1] * weights[2 * j + 1];
+                    let g0 = g[2 * j];
+                    let gi = g[2 * j + 1];
+                    h1.fmadd(f0 + fi, g0 + gi);
+                    h_inf.fmadd(fi, gi);
+                    f[2 * j] = f0;
+                    f[2 * j + 1] = fi;
+                }
+                round_message((h1.reduce(), h_inf.reduce()));
+                let r = challenges[0];
+                let mul_r = <$mul_by_const>::new(r);
+                for j in 0..half {
+                    let f0 = f[2 * j];
+                    let fi = f[2 * j + 1];
+                    let g0 = g[2 * j];
+                    let gi = g[2 * j + 1];
+                    f[j] = f0 + mul_r.apply(fi);
+                    g[j] = g0 + mul_r.apply(gi);
+                }
+                f.truncate(half);
+                g.truncate(half);
+                [<projective_different_claims_tail_delayed_ $suffix>](f, g, &challenges[1..]);
+            }
+        }
+    };
+}
+projective_different_claims_delayed_fns!(BB4, BB4Accum, BB4MulByConst, bb4);
+projective_different_claims_delayed_fns!(BB5, BB5Accum, BB5MulByConst, bb5);
+projective_different_claims_delayed_fns!(KB5, KB5Accum, KB5MulByConst, kb5);

@@ -191,3 +191,82 @@ pub fn sumcheck_deg2_eq_gruen_projective<F>(
         g.truncate(half);
     }
 }
+
+/// Preweight and store f during the first evaluation pass. Every round emits
+/// (h1,h_inf); the claim supplies h0. Terminal values are f(a*r) and g(r).
+/// Costs N+4(N-1) multiplications and 6(N-1) additions, for N>=2.
+pub fn sumcheck_deg2_eq_projective_different_claims<F>(
+    f: &mut Vec<F>,
+    g: &mut Vec<F>,
+    suffix_eq: &[Vec<F>],
+    challenges: &[F],
+    zero: F,
+) where
+    F: Copy + Add<Output = F> + AddAssign + Mul<Output = F> + 'static,
+{
+    if challenges.is_empty() {
+        return;
+    }
+    let half = f.len() / 2;
+    let weights = &suffix_eq[0];
+    let mut h1 = zero;
+    let mut h_inf = zero;
+    for j in 0..half {
+        let f0 = f[2 * j] * weights[2 * j];
+        let f1 = f[2 * j + 1] * weights[2 * j + 1];
+        let g0 = g[2 * j];
+        let g1 = g[2 * j + 1];
+        h1 += (f0 + f1) * (g0 + g1);
+        h_inf += f1 * g1;
+        f[2 * j] = f0;
+        f[2 * j + 1] = f1;
+    }
+    round_message((h1, h_inf));
+    let r = challenges[0];
+    for j in 0..half {
+        let f0 = f[2 * j];
+        let f1 = f[2 * j + 1];
+        let g0 = g[2 * j];
+        let g1 = g[2 * j + 1];
+        f[j] = f0 + r * f1;
+        g[j] = g0 + r * g1;
+    }
+    f.truncate(half);
+    g.truncate(half);
+    projective_different_claims_tail(f, g, &challenges[1..], zero);
+}
+
+// Two-value projective evaluation after all monomial weights are absorbed.
+pub(super) fn projective_different_claims_tail<F>(
+    f: &mut Vec<F>,
+    g: &mut Vec<F>,
+    challenges: &[F],
+    zero: F,
+) where
+    F: Copy + Add<Output = F> + AddAssign + Mul<Output = F> + 'static,
+{
+    for &r in challenges {
+        let half = f.len() / 2;
+        let mut h1 = zero;
+        let mut h_inf = zero;
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let f1 = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let g1 = g[2 * j + 1];
+            h1 += (f0 + f1) * (g0 + g1);
+            h_inf += f1 * g1;
+        }
+        round_message((h1, h_inf));
+        for j in 0..half {
+            let f0 = f[2 * j];
+            let f1 = f[2 * j + 1];
+            let g0 = g[2 * j];
+            let g1 = g[2 * j + 1];
+            f[j] = f0 + r * f1;
+            g[j] = g0 + r * g1;
+        }
+        f.truncate(half);
+        g.truncate(half);
+    }
+}
