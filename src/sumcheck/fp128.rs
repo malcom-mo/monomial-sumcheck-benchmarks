@@ -163,11 +163,13 @@ pub fn sumcheck_deg2_eq_gruen_boolean_fp128(
             let g0 = g[2 * j];
             let g1 = g[2 * j + 1];
             let ew = eq_rest[j];
-            let df = f1 - f0;
+            let wf0 = f0 * ew;
+            let wf1 = f1 * ew;
+            let df = wf1 - wf0;
             let dg = g1 - g0;
 
-            q1 += f1 * g1 * ew;
-            q_inf += df * dg * ew;
+            q1 += wf1 * g1;
+            q_inf += df * dg;
         }
 
         round_message((q1, q_inf));
@@ -210,11 +212,13 @@ pub fn sumcheck_deg2_eq_gruen_projective_fp128(
             let g0 = g[2 * j];
             let gi = g[2 * j + 1];
             let ew = eq_rest[j];
-            let sf = f0 + fi;
+            let wf0 = f0 * ew;
+            let wfi = fi * ew;
+            let sf = wf0 + wfi;
             let sg = g0 + gi;
 
-            q1 += sf * sg * ew;
-            q_inf += fi * gi * ew;
+            q1 += sf * sg;
+            q_inf += wfi * gi;
         }
 
         round_message((q1, q_inf));
@@ -263,11 +267,13 @@ pub fn sumcheck_deg2_eq_gruen_projective_1inf_fp128(
             let g1 = g[2 * j];
             let gi = g[2 * j + 1];
             let ew = eq_rest[j];
-            let f0 = f1 - fi;
+            let wf1 = f1 * ew;
+            let wfi = fi * ew;
+            let f0 = wf1 - wfi;
             let g0 = g1 - gi;
 
-            q0 += f0 * g0 * ew;
-            q_inf += fi * gi * ew;
+            q0 += f0 * g0;
+            q_inf += wfi * gi;
         }
 
         round_message((q0, q_inf));
@@ -376,11 +382,13 @@ pub fn sumcheck_deg2_eq_delayed_fp128(
             let g0 = g[2 * j];
             let g1 = g[2 * j + 1];
             let ew = eq_rest[j];
-            let df = f1 - f0;
+            let wf0 = f0 * ew;
+            let wf1 = f1 * ew;
+            let df = wf1 - wf0;
             let dg = g1 - g0;
 
-            q1.fmadd(f1 * g1, ew);
-            q_inf.fmadd(df * dg, ew);
+            q1.fmadd(wf1, g1);
+            q_inf.fmadd(df, dg);
         }
 
         round_message((q1.reduce(), q_inf.reduce()));
@@ -503,11 +511,13 @@ pub fn sumcheck_deg2_eq_projective_delayed_fp128(
             let g0 = g[2 * j];
             let gi = g[2 * j + 1];
             let ew = eq_rest[j];
-            let sf = f0 + fi;
+            let wf0 = f0 * ew;
+            let wfi = fi * ew;
+            let sf = wf0 + wfi;
             let sg = g0 + gi;
 
-            q1.fmadd(sf * sg, ew);
-            q_inf.fmadd(fi * gi, ew);
+            q1.fmadd(sf, sg);
+            q_inf.fmadd(wfi, gi);
         }
 
         round_message((q1.reduce(), q_inf.reduce()));
@@ -547,11 +557,13 @@ pub fn sumcheck_deg2_eq_projective_1inf_delayed_fp128(
             let g1 = g[2 * j];
             let gi = g[2 * j + 1];
             let ew = eq_rest[j];
-            let f0 = f1 - fi;
+            let wf1 = f1 * ew;
+            let wfi = fi * ew;
+            let f0 = wf1 - wfi;
             let g0 = g1 - gi;
 
-            q0.fmadd(f0 * g0, ew);
-            q_inf.fmadd(fi * gi, ew);
+            q0.fmadd(f0, g0);
+            q_inf.fmadd(wfi, gi);
         }
 
         round_message((q0.reduce(), q_inf.reduce()));

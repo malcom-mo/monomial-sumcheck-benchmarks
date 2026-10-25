@@ -533,11 +533,14 @@ macro_rules! delayed_sumcheck_fns {
                         let g0 = g[2 * j];
                         let g1 = g[2 * j + 1];
                         let ew = eq_rest[j];
-                        let df = f1 - f0;
+                        let wf0 = f0 * ew;
+                        let wf1 = f1 * ew;
+                        let df = wf1 - wf0;
                         let dg = g1 - g0;
-                        q1.fmadd(f1 * g1, ew);
-                        q_inf.fmadd(df * dg, ew);
+                        q1.fmadd(wf1, g1);
+                        q_inf.fmadd(df, dg);
                     }
+
                     round_message((q1.reduce(), q_inf.reduce()));
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);
@@ -610,15 +613,18 @@ macro_rules! delayed_sumcheck_fns {
                         let g0 = g[2 * j];
                         let gi = g[2 * j + 1];
                         let ew = eq_rest[j];
-                        let sf = f0 + fi;
+                        let wf0 = f0 * ew;
+                        let wfi = fi * ew;
+                        let sf = wf0 + wfi;
                         let sg = g0 + gi;
                         // Accumulate the product of loaded values first, as the
                         // Boolean kernel does.  With two nine-limb accumulators the
                         // loop is short of registers, and on the degree-5 extensions
                         // LLVM's schedule for the other order is 5-10% slower.
-                        q_inf.fmadd(fi * gi, ew);
-                        q1.fmadd(sf * sg, ew);
+                        q_inf.fmadd(wfi, gi);
+                        q1.fmadd(sf, sg);
                     }
+
                     round_message((q1.reduce(), q_inf.reduce()));
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);

@@ -116,11 +116,13 @@ pub fn sumcheck_deg2_eq_gruen_boolean<F>(
             let g0 = g[2 * j];
             let g1 = g[2 * j + 1];
             let ew = eq_rest[j];
-            let df = f1 - f0;
+            let wf0 = f0 * ew;
+            let wf1 = f1 * ew;
+            let df = wf1 - wf0;
             let dg = g1 - g0;
 
-            q1 += f1 * g1 * ew;
-            q_inf += df * dg * ew;
+            q1 += wf1 * g1;
+            q_inf += df * dg;
         }
 
         round_message((q1, q_inf));
@@ -165,9 +167,11 @@ pub fn sumcheck_deg2_eq_gruen_projective<F>(
             let g0 = g[2 * j];
             let gi = g[2 * j + 1];
             let ew = eq_rest[j];
+            let wf0 = f0 * ew;
+            let wfi = fi * ew;
 
-            q1 += (f0 + fi) * (g0 + gi) * ew;
-            q_inf += fi * gi * ew;
+            q1 += (wf0 + wfi) * (g0 + gi);
+            q_inf += wfi * gi;
         }
 
         round_message((q1, q_inf));

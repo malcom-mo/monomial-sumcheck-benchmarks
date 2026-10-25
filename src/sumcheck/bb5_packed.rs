@@ -20,11 +20,13 @@ pub fn bb5_eq_gruen_boolean_eval_ref(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -> (
         let g0 = g[2 * j];
         let g1 = g[2 * j + 1];
         let ew = eq_rest[j];
-        let df = f1 - f0;
+        let wf0 = f0 * ew;
+        let wf1 = f1 * ew;
+        let df = wf1 - wf0;
         let dg = g1 - g0;
 
-        q1 += f1 * g1 * ew;
-        q_inf += df * dg * ew;
+        q1 += wf1 * g1;
+        q_inf += df * dg;
     }
 
     (q1, q_inf)
@@ -45,11 +47,13 @@ pub fn bb5_eq_gruen_projective_eval_ref(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -
         let g0 = g[2 * j];
         let gi = g[2 * j + 1];
         let ew = eq_rest[j];
-        let sf = f0 + fi;
+        let wf0 = f0 * ew;
+        let wfi = fi * ew;
+        let sf = wf0 + wfi;
         let sg = g0 + gi;
 
-        q_inf += fi * gi * ew;
-        q1 += sf * sg * ew;
+        q_inf += wfi * gi;
+        q1 += sf * sg;
     }
 
     (q1, q_inf)
@@ -86,11 +90,13 @@ pub fn bb5_eq_delayed_eval_ref(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -> (BB5Acc
         let g0 = g[2 * j];
         let g1 = g[2 * j + 1];
         let ew = eq_rest[j];
-        let df = f1 - f0;
+        let wf0 = f0 * ew;
+        let wf1 = f1 * ew;
+        let df = wf1 - wf0;
         let dg = g1 - g0;
 
-        q1.fmadd(f1 * g1, ew);
-        q_inf.fmadd(df * dg, ew);
+        q1.fmadd(wf1, g1);
+        q_inf.fmadd(df, dg);
     }
 
     (q1, q_inf)
@@ -115,11 +121,13 @@ pub fn bb5_eq_projective_delayed_eval_ref(
         let g0 = g[2 * j];
         let gi = g[2 * j + 1];
         let ew = eq_rest[j];
-        let sf = f0 + fi;
+        let wf0 = f0 * ew;
+        let wfi = fi * ew;
+        let sf = wf0 + wfi;
         let sg = g0 + gi;
 
-        q_inf.fmadd(fi * gi, ew);
-        q1.fmadd(sf * sg, ew);
+        q_inf.fmadd(wfi, gi);
+        q1.fmadd(sf, sg);
     }
 
     (q1, q_inf)
@@ -191,11 +199,13 @@ fn bb5_eq_gruen_boolean_eval_packed(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -> (B
         let g0 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane)]));
         let g1 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane) + 1]));
         let ew = PackedBB5::from_ext_slice(&eq_rest[j..j + BB5_PACK_WIDTH]);
-        let df = f1 - f0;
+        let wf0 = f0 * ew;
+        let wf1 = f1 * ew;
+        let df = wf1 - wf0;
         let dg = g1 - g0;
 
-        q1_packed += (f1 * g1) * ew;
-        q_inf_packed += (df * dg) * ew;
+        q1_packed += wf1 * g1;
+        q_inf_packed += df * dg;
     }
 
     for j in packed_end..half {
@@ -204,11 +214,13 @@ fn bb5_eq_gruen_boolean_eval_packed(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -> (B
         let g0 = g[2 * j];
         let g1 = g[2 * j + 1];
         let ew = eq_rest[j];
-        let df = f1 - f0;
+        let wf0 = f0 * ew;
+        let wf1 = f1 * ew;
+        let df = wf1 - wf0;
         let dg = g1 - g0;
 
-        q1_tail += f1 * g1 * ew;
-        q_inf_tail += df * dg * ew;
+        q1_tail += wf1 * g1;
+        q_inf_tail += df * dg;
     }
 
     (
@@ -230,11 +242,13 @@ fn bb5_eq_delayed_eval_packed(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -> (BB5Accu
         let g0 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane)]));
         let g1 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane) + 1]));
         let ew = PackedBB5::from_ext_slice(&eq_rest[j..j + BB5_PACK_WIDTH]);
-        let df = f1 - f0;
+        let wf0 = f0 * ew;
+        let wf1 = f1 * ew;
+        let df = wf1 - wf0;
         let dg = g1 - g0;
 
-        bb5_accum_fmadd_packed(&mut q1, f1 * g1, ew);
-        bb5_accum_fmadd_packed(&mut q_inf, df * dg, ew);
+        bb5_accum_fmadd_packed(&mut q1, wf1, g1);
+        bb5_accum_fmadd_packed(&mut q_inf, df, dg);
     }
 
     for j in packed_end..half {
@@ -243,11 +257,13 @@ fn bb5_eq_delayed_eval_packed(f: &[BB5], g: &[BB5], eq_rest: &[BB5]) -> (BB5Accu
         let g0 = g[2 * j];
         let g1 = g[2 * j + 1];
         let ew = eq_rest[j];
-        let df = f1 - f0;
+        let wf0 = f0 * ew;
+        let wf1 = f1 * ew;
+        let df = wf1 - wf0;
         let dg = g1 - g0;
 
-        q1.fmadd(f1 * g1, ew);
-        q_inf.fmadd(df * dg, ew);
+        q1.fmadd(wf1, g1);
+        q_inf.fmadd(df, dg);
     }
 
     (q1, q_inf)
@@ -268,11 +284,13 @@ pub fn bb5_eq_gruen_projective_eval_packed(f: &[BB5], g: &[BB5], eq_rest: &[BB5]
         let g0 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane)]));
         let gi = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane) + 1]));
         let ew = PackedBB5::from_ext_slice(&eq_rest[j..j + BB5_PACK_WIDTH]);
-        let sf = f0 + fi;
+        let wf0 = f0 * ew;
+        let wfi = fi * ew;
+        let sf = wf0 + wfi;
         let sg = g0 + gi;
 
-        q_inf_packed += (fi * gi) * ew;
-        q1_packed += (sf * sg) * ew;
+        q_inf_packed += wfi * gi;
+        q1_packed += sf * sg;
     }
 
     for j in packed_end..half {
@@ -281,11 +299,13 @@ pub fn bb5_eq_gruen_projective_eval_packed(f: &[BB5], g: &[BB5], eq_rest: &[BB5]
         let g0 = g[2 * j];
         let gi = g[2 * j + 1];
         let ew = eq_rest[j];
-        let sf = f0 + fi;
+        let wf0 = f0 * ew;
+        let wfi = fi * ew;
+        let sf = wf0 + wfi;
         let sg = g0 + gi;
 
-        q_inf_tail += fi * gi * ew;
-        q1_tail += sf * sg * ew;
+        q_inf_tail += wfi * gi;
+        q1_tail += sf * sg;
     }
 
     (
@@ -311,11 +331,13 @@ fn bb5_eq_projective_delayed_eval_packed(
         let g0 = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane)]));
         let gi = pack_bb5_chunk(core::array::from_fn(|lane| g[2 * (j + lane) + 1]));
         let ew = PackedBB5::from_ext_slice(&eq_rest[j..j + BB5_PACK_WIDTH]);
-        let sf = f0 + fi;
+        let wf0 = f0 * ew;
+        let wfi = fi * ew;
+        let sf = wf0 + wfi;
         let sg = g0 + gi;
 
-        bb5_accum_fmadd_packed(&mut q_inf, fi * gi, ew);
-        bb5_accum_fmadd_packed(&mut q1, sf * sg, ew);
+        bb5_accum_fmadd_packed(&mut q_inf, wfi, gi);
+        bb5_accum_fmadd_packed(&mut q1, sf, sg);
     }
 
     for j in packed_end..half {
@@ -324,11 +346,13 @@ fn bb5_eq_projective_delayed_eval_packed(
         let g0 = g[2 * j];
         let gi = g[2 * j + 1];
         let ew = eq_rest[j];
-        let sf = f0 + fi;
+        let wf0 = f0 * ew;
+        let wfi = fi * ew;
+        let sf = wf0 + wfi;
         let sg = g0 + gi;
 
-        q_inf.fmadd(fi * gi, ew);
-        q1.fmadd(sf * sg, ew);
+        q_inf.fmadd(wfi, gi);
+        q1.fmadd(sf, sg);
     }
 
     (q1, q_inf)
