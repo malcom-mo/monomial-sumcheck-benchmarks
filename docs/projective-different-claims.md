@@ -3,10 +3,11 @@
 The weighted `projective-different-claims` and
 `projective-different-claims-delayed` cases preweight f during the first
 round's evaluation pass, store those weighted coefficients, and continue
-with ordinary projective binding. They compute two values per round:
-`h1` and `h_inf`. The incoming claim supplies `h0 = claim - h_inf`.
-The original unweighted benchmarks still compute three values independently;
-these weighted variants use their own two-value projective loops.
+with ordinary projective binding. Both have explicit claim-aware and claim-unaware modes. Aware mode computes
+`h1` and `h_inf`; the incoming claim supplies `h0 = claim - h_inf`. Unaware
+mode also computes `h0` independently. The original Rust entry points keep
+their defaults, but benchmarks now spell out the mode. See
+[claim-modes-and-flipped.md](claim-modes-and-flipped.md) for the full matrix.
 
 ## Polynomial and terminal claims
 
@@ -22,7 +23,7 @@ set `F[i] = W[i] f[i]`. In every round the new protocol evaluates
 h(y) = sum_j (F[2j] + y F[2j+1]) (g[2j] + y g[2j+1]).
 ```
 
-It computes `h(1)` and the quadratic coefficient `h_inf`; the dot-product
+In aware mode it computes `h(1)` and the quadratic coefficient `h_inf`; the dot-product
 claim is `h(0) + h_inf`. After emitting those values it binds both tables
 with the same challenge r. The terminal values are `F(r) = f(a*r)` and `g(r)`,
 where a*r is coordinatewise multiplication. Ordinary weighted projective
@@ -46,6 +47,9 @@ input restoration remain outside timing. The interface needs no separate
 weight-point parameter.
 
 For N=2^n and n>=1, with P=N-1 pairs across all rounds:
+
+The following table describes claim-aware mode. Unaware mode costs
+`6N-5` multiplications and `7P` additions for the new variant.
 
 | Kernel | Multiplications | Additions |
 |---|---:|---:|
@@ -81,15 +85,15 @@ expose both final values through an optimizer barrier for all compared cases.
 A quick exploratory n=20 comparison of all weighted projective cases:
 
 ```sh
-cargo bench --bench sumcheck -- 'sumcheck_deg2_eq/.*/(projective|proj_delayed|projective-different-claims|projective-different-claims-delayed)/20$'
+cargo bench --bench sumcheck -- 'sumcheck_deg2_eq/.*/(projective|proj_delayed|projective-different-claims|projective-different-claims-delayed)-claim-aware/20$'
 ```
 
 For independent paired process repetitions, from a clean committed tree:
 
 ```sh
 python3 scripts/collect.py --suite sumcheck \
-  --case sumcheck_deg2_eq/BN254/proj_delayed/20 \
-  --case sumcheck_deg2_eq/BN254/projective-different-claims-delayed/20 \
+  --case sumcheck_deg2_eq/BN254/proj_delayed-claim-aware/20 \
+  --case sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-aware/20 \
   --repetitions 10 --max-load-per-cpu 0.4 \
   --label projective-different-claims-bn254-n20
 ```

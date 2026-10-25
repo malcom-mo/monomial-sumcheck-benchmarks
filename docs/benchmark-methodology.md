@@ -17,11 +17,15 @@ serialization, challenge derivation, and polynomial-commitment openings.
 Paper text must call this measurement a complete prover kernel, not an
 end-to-end prover.
 
-The weighted `projective-different-claims` variants include first-round
-preweighting and use two-value projective rounds. Their terminal opening points
-differ from the ordinary weighted projective cases; see
-[projective-different-claims.md](projective-different-claims.md). Both final
-polynomial values pass through an optimizer barrier for every sumcheck case.
+Every sumcheck benchmark ID ends in `-claim-aware` or `-claim-unaware` before
+the size. Aware kernels compute two round quantities, assuming the incoming
+claim supplies the omitted relation; unaware kernels compute three independently.
+Both use the same inputs, challenges, weights and backend configuration. These
+explicit IDs replace the historical unsuffixed sumcheck IDs. Weighted
+`projective-different-claims` and `flipped-different-claims` include first-round
+preweighting and change the terminal opening points. See
+[claim-modes-and-flipped.md](claim-modes-and-flipped.md) for the cases and arithmetic.
+Both final polynomial values pass through an optimizer barrier in every case.
 
 ## Inputs
 
@@ -72,8 +76,8 @@ For a degree-2 BN254 comparison at n=20, run:
 
     python3 scripts/collect.py \
       --suite sumcheck \
-      --case sumcheck_deg2/BN254/delayed/20 \
-      --case sumcheck_deg2/BN254/proj_delayed/20 \
+      --case sumcheck_deg2/BN254/delayed-claim-unaware/20 \
+      --case sumcheck_deg2/BN254/proj_delayed-claim-unaware/20 \
       --repetitions 10 \
       --max-load-per-cpu 0.4 \
       --label bn254-deg2-n20

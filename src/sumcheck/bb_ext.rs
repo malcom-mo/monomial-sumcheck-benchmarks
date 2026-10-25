@@ -477,7 +477,7 @@ impl KB5MulByConst {
 macro_rules! delayed_sumcheck_fns {
     ($field:ty, $accum:ty, $mul_by_const:ty, $suffix:ident) => {
         paste::paste! {
-            pub fn [<sumcheck_deg2_delayed_ $suffix>](
+            pub fn [<sumcheck_deg2_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
                 f: &mut Vec<$field>,
                 g: &mut Vec<$field>,
                 challenges: &[$field],
@@ -495,10 +495,10 @@ macro_rules! delayed_sumcheck_fns {
                         let df = f1 - f0;
                         let dg = g1 - g0;
                         h0.fmadd(f0, g0);
-                        h1.fmadd(f1, g1);
+                        if !CLAIM_AWARE { h1.fmadd(f1, g1); }
                         h_inf.fmadd(df, dg);
                     }
-                    round_message((h0.reduce(), h1.reduce(), h_inf.reduce()));
+                    if CLAIM_AWARE { round_message((h0.reduce(), h_inf.reduce())); } else { round_message((h0.reduce(), h1.reduce(), h_inf.reduce())); }
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);
                     for j in 0..half {
@@ -514,8 +514,26 @@ macro_rules! delayed_sumcheck_fns {
                 }
             }
 
+            pub fn [<sumcheck_deg2_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_delayed_ $suffix _with_claim_mode>]::<false>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_delayed_ $suffix _with_claim_mode>]::<true>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_delayed_ $suffix _with_claim_mode>]::<false>(f, g, challenges); }
+
             #[allow(dead_code)]
-            pub fn [<sumcheck_deg2_eq_delayed_ $suffix>](
+            pub fn [<sumcheck_deg2_eq_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
                 f: &mut Vec<$field>,
                 g: &mut Vec<$field>,
                 suffix_eq: &[Vec<$field>],
@@ -526,6 +544,7 @@ macro_rules! delayed_sumcheck_fns {
                     let half = f.len() / 2;
                     let eq_rest = &suffix_eq[round + 1];
                     let mut q1 = <$accum>::zero();
+                    let mut q0 = <$accum>::zero();
                     let mut q_inf = <$accum>::zero();
                     for j in 0..half {
                         let f0 = f[2 * j];
@@ -537,11 +556,12 @@ macro_rules! delayed_sumcheck_fns {
                         let wf1 = f1 * ew;
                         let df = wf1 - wf0;
                         let dg = g1 - g0;
+                        if !CLAIM_AWARE { q0.fmadd(wf0, g0); }
                         q1.fmadd(wf1, g1);
                         q_inf.fmadd(df, dg);
                     }
 
-                    round_message((q1.reduce(), q_inf.reduce()));
+                    if CLAIM_AWARE { round_message((q1.reduce(), q_inf.reduce())); } else { round_message((q0.reduce(), q1.reduce(), q_inf.reduce())); }
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);
                     for j in 0..half {
@@ -557,7 +577,28 @@ macro_rules! delayed_sumcheck_fns {
                 }
             }
 
-            pub fn [<sumcheck_deg2_projective_delayed_ $suffix>](
+            pub fn [<sumcheck_deg2_eq_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_delayed_ $suffix _with_claim_mode>]::<false>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_projective_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
                 f: &mut Vec<$field>,
                 g: &mut Vec<$field>,
                 challenges: &[$field],
@@ -574,11 +615,11 @@ macro_rules! delayed_sumcheck_fns {
                         let gi = g[2 * j + 1];
                         let sf = f0 + fi;
                         let sg = g0 + gi;
-                        h0.fmadd(f0, g0);
+                        if !CLAIM_AWARE { h0.fmadd(f0, g0); }
                         h1.fmadd(sf, sg);
                         h_inf.fmadd(fi, gi);
                     }
-                    round_message((h0.reduce(), h1.reduce(), h_inf.reduce()));
+                    if CLAIM_AWARE { round_message((h1.reduce(), h_inf.reduce())); } else { round_message((h0.reduce(), h1.reduce(), h_inf.reduce())); }
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);
                     for j in 0..half {
@@ -594,8 +635,26 @@ macro_rules! delayed_sumcheck_fns {
                 }
             }
 
+            pub fn [<sumcheck_deg2_projective_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_projective_delayed_ $suffix _with_claim_mode>]::<false>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_projective_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_projective_delayed_ $suffix _with_claim_mode>]::<true>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_projective_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_projective_delayed_ $suffix _with_claim_mode>]::<false>(f, g, challenges); }
+
             #[allow(dead_code)]
-            pub fn [<sumcheck_deg2_eq_projective_delayed_ $suffix>](
+            pub fn [<sumcheck_deg2_eq_projective_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
                 f: &mut Vec<$field>,
                 g: &mut Vec<$field>,
                 suffix_eq: &[Vec<$field>],
@@ -606,6 +665,7 @@ macro_rules! delayed_sumcheck_fns {
                     let half = f.len() / 2;
                     let eq_rest = &suffix_eq[round + 1];
                     let mut q1 = <$accum>::zero();
+                    let mut q0 = <$accum>::zero();
                     let mut q_inf = <$accum>::zero();
                     for j in 0..half {
                         let f0 = f[2 * j];
@@ -618,14 +678,15 @@ macro_rules! delayed_sumcheck_fns {
                         let sf = wf0 + wfi;
                         let sg = g0 + gi;
                         // Accumulate the product of loaded values first, as the
-                        // Boolean kernel does.  With two nine-limb accumulators the
+                        // Boolean kernel does.  Historically, with two nine-limb accumulators the
                         // loop is short of registers, and on the degree-5 extensions
                         // LLVM's schedule for the other order is 5-10% slower.
+                        if !CLAIM_AWARE { q0.fmadd(wf0, g0); }
                         q_inf.fmadd(wfi, gi);
                         q1.fmadd(sf, sg);
                     }
 
-                    round_message((q1.reduce(), q_inf.reduce()));
+                    if CLAIM_AWARE { round_message((q1.reduce(), q_inf.reduce())); } else { round_message((q0.reduce(), q1.reduce(), q_inf.reduce())); }
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);
                     for j in 0..half {
@@ -640,6 +701,27 @@ macro_rules! delayed_sumcheck_fns {
                     g.truncate(half);
                 }
             }
+
+            pub fn [<sumcheck_deg2_eq_projective_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_projective_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_projective_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_projective_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_projective_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_projective_delayed_ $suffix _with_claim_mode>]::<false>(f, g, suffix_eq, challenges); }
         }
     };
 }
@@ -705,13 +787,14 @@ mod tests {
 macro_rules! projective_different_claims_delayed_fns {
     ($field:ty, $accum:ty, $mul_by_const:ty, $suffix:ident) => {
         paste::paste! {
-            pub(super) fn [<projective_different_claims_tail_delayed_ $suffix>](
+            pub(super) fn [<projective_different_claims_tail_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
                 f: &mut Vec<$field>,
                 g: &mut Vec<$field>,
                 challenges: &[$field],
             ) {
                 for round in 0..challenges.len() {
                     let half = f.len() / 2;
+                    let mut h0 = <$accum>::zero();
                     let mut h1 = <$accum>::zero();
                     let mut h_inf = <$accum>::zero();
                     for j in 0..half {
@@ -719,10 +802,11 @@ macro_rules! projective_different_claims_delayed_fns {
                         let fi = f[2 * j + 1];
                         let g0 = g[2 * j];
                         let gi = g[2 * j + 1];
+                        if !CLAIM_AWARE { h0.fmadd(f0, g0); }
                         h1.fmadd(f0 + fi, g0 + gi);
                         h_inf.fmadd(fi, gi);
                     }
-                    round_message((h1.reduce(), h_inf.reduce()));
+                    if CLAIM_AWARE { round_message((h1.reduce(), h_inf.reduce())); } else { round_message((h0.reduce(), h1.reduce(), h_inf.reduce())); }
                     let r = challenges[round];
                     let mul_r = <$mul_by_const>::new(r);
                     for j in 0..half {
@@ -738,7 +822,9 @@ macro_rules! projective_different_claims_delayed_fns {
                 }
             }
 
-            pub fn [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix>](
+
+
+            pub fn [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
                 f: &mut Vec<$field>,
                 g: &mut Vec<$field>,
                 suffix_eq: &[Vec<$field>],
@@ -747,6 +833,7 @@ macro_rules! projective_different_claims_delayed_fns {
                 if challenges.is_empty() { return; }
                 let half = f.len() / 2;
                 let weights = &suffix_eq[0];
+                let mut h0 = <$accum>::zero();
                 let mut h1 = <$accum>::zero();
                 let mut h_inf = <$accum>::zero();
                 for j in 0..half {
@@ -754,12 +841,13 @@ macro_rules! projective_different_claims_delayed_fns {
                     let fi = f[2 * j + 1] * weights[2 * j + 1];
                     let g0 = g[2 * j];
                     let gi = g[2 * j + 1];
+                    if !CLAIM_AWARE { h0.fmadd(f0, g0); }
                     h1.fmadd(f0 + fi, g0 + gi);
                     h_inf.fmadd(fi, gi);
                     f[2 * j] = f0;
                     f[2 * j + 1] = fi;
                 }
-                round_message((h1.reduce(), h_inf.reduce()));
+                if CLAIM_AWARE { round_message((h1.reduce(), h_inf.reduce())); } else { round_message((h0.reduce(), h1.reduce(), h_inf.reduce())); }
                 let r = challenges[0];
                 let mul_r = <$mul_by_const>::new(r);
                 for j in 0..half {
@@ -772,11 +860,154 @@ macro_rules! projective_different_claims_delayed_fns {
                 }
                 f.truncate(half);
                 g.truncate(half);
-                [<projective_different_claims_tail_delayed_ $suffix>](f, g, &challenges[1..]);
+                [<projective_different_claims_tail_delayed_ $suffix _with_claim_mode>]::<CLAIM_AWARE>(f, g, &challenges[1..]);
             }
+
+            pub fn [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_projective_different_claims_delayed_ $suffix _with_claim_mode>]::<false>(f, g, suffix_eq, challenges); }
         }
     };
 }
 projective_different_claims_delayed_fns!(BB4, BB4Accum, BB4MulByConst, bb4);
 projective_different_claims_delayed_fns!(BB5, BB5Accum, BB5MulByConst, bb5);
 projective_different_claims_delayed_fns!(KB5, KB5Accum, KB5MulByConst, kb5);
+
+macro_rules! flipped_claim_fns {
+    ($field:ty, $accum:ty, $mul_by_const:ty, $suffix:ident) => {
+        paste::paste! {
+            pub fn [<sumcheck_deg2_flipped_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) {
+                for round in 0..challenges.len() {
+                    let half = f.len() / 2;
+                    let mut c0 = <$accum>::zero();
+                    let mut h1 = <$accum>::zero();
+                    let mut c2 = <$accum>::zero();
+                    for j in 0..half {
+                        let f0 = f[2 * j];
+                        let fi = f[2 * j + 1];
+                        let g0 = g[2 * j];
+                        let gi = g[2 * j + 1];
+                        if !CLAIM_AWARE { h1.fmadd(f0 + fi, g0 + gi); }
+                        c0.fmadd(f0, gi);
+                        c2.fmadd(fi, g0);
+                    }
+                    if CLAIM_AWARE { round_message((c0.reduce(), c2.reduce())); } else { round_message((c0.reduce(), h1.reduce(), c2.reduce())); }
+                    let r = challenges[round];
+                    let mul_r = <$mul_by_const>::new(r);
+                    for j in 0..half {
+                        let f0 = f[2 * j];
+                        let fi = f[2 * j + 1];
+                        let g0 = g[2 * j];
+                        let gi = g[2 * j + 1];
+                        f[j] = f0 + mul_r.apply(fi);
+                        g[j] = gi + mul_r.apply(g0);
+                    }
+                    f.truncate(half);
+                    g.truncate(half);
+                }
+            }
+
+            pub fn [<sumcheck_deg2_flipped_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_flipped_delayed_ $suffix _with_claim_mode>]::<false>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_flipped_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_flipped_delayed_ $suffix _with_claim_mode>]::<true>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_flipped_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_flipped_delayed_ $suffix _with_claim_mode>]::<false>(f, g, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix _with_claim_mode>]<const CLAIM_AWARE: bool>(
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) {
+                if challenges.is_empty() { return; }
+                let half = f.len() / 2;
+                let weights = &suffix_eq[0];
+                let mut c0 = <$accum>::zero();
+                let mut h1 = <$accum>::zero();
+                let mut c2 = <$accum>::zero();
+                for j in 0..half {
+                    let f0 = f[2 * j] * weights[2 * j];
+                    let fi = f[2 * j + 1] * weights[2 * j + 1];
+                    let g0 = g[2 * j];
+                    let gi = g[2 * j + 1];
+                    if !CLAIM_AWARE { h1.fmadd(f0 + fi, g0 + gi); }
+                    c0.fmadd(f0, gi);
+                    c2.fmadd(fi, g0);
+                    f[2 * j] = f0;
+                    f[2 * j + 1] = fi;
+                }
+                if CLAIM_AWARE { round_message((c0.reduce(), c2.reduce())); } else { round_message((c0.reduce(), h1.reduce(), c2.reduce())); }
+                let r = challenges[0];
+                let mul_r = <$mul_by_const>::new(r);
+                for j in 0..half {
+                    let f0 = f[2 * j];
+                    let fi = f[2 * j + 1];
+                    let g0 = g[2 * j];
+                    let gi = g[2 * j + 1];
+                    f[j] = f0 + mul_r.apply(fi);
+                    g[j] = gi + mul_r.apply(g0);
+                }
+                f.truncate(half);
+                g.truncate(half);
+                [<sumcheck_deg2_flipped_delayed_ $suffix _with_claim_mode>]::<CLAIM_AWARE>(f, g, &challenges[1..]);
+            }
+
+            pub fn [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix _claim_aware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix _with_claim_mode>]::<true>(f, g, suffix_eq, challenges); }
+
+            pub fn [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix _claim_unaware>](
+                f: &mut Vec<$field>,
+                g: &mut Vec<$field>,
+                suffix_eq: &[Vec<$field>],
+                challenges: &[$field],
+            ) { [<sumcheck_deg2_eq_flipped_different_claims_delayed_ $suffix _with_claim_mode>]::<false>(f, g, suffix_eq, challenges); }
+        }
+    };
+}
+flipped_claim_fns!(BB4, BB4Accum, BB4MulByConst, bb4);
+flipped_claim_fns!(BB5, BB5Accum, BB5MulByConst, bb5);
+flipped_claim_fns!(KB5, KB5Accum, KB5MulByConst, kb5);

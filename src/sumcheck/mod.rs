@@ -40,6 +40,8 @@ const BB5_PACK_WIDTH: usize = 4;
 mod bb5_packed;
 mod bb_ext;
 mod bn254;
+#[cfg(test)]
+mod claim_mode_tests;
 mod data;
 mod fp128;
 mod generic;

@@ -79,7 +79,7 @@ cargo bench --bench sumcheck
 cargo bench --bench sumcheck -- 'sumcheck_deg2/.*/20|sumcheck_deg2_eq/.*/20'
 
 # Focus on the most codegen-sensitive degree-2 x eq rows while iterating
-cargo bench --bench sumcheck -- 'sumcheck_deg2_eq/(BB5|Fp128|GF128)/(boolean|projective|delayed|proj_delayed)/20'
+cargo bench --bench sumcheck -- 'sumcheck_deg2_eq/(BB5|Fp128|GF128)/(boolean|projective|delayed|proj_delayed)-claim-aware/20'
 
 # Reproduce the combined binding table (paper, Section 6.1)
 cargo bench --bench binding -- 'combined'
@@ -131,9 +131,15 @@ python3 ../../scripts/paper_tables.py --out /tmp/paper-tables \
   $(grep -v '^#' ../../docs/paper-runs.txt)
 ```
 
-## Weighted projective comparison
+## Claim modes and flipped comparisons
 
-`projective-different-claims` and `projective-different-claims-delayed` preweight
-one polynomial during the first evaluation pass, then use two-value projective
-rounds. Their terminal values are `f(a*r)` and `g(r)`. Preweighting is timed.
-See [the implementation notes and operation counts](docs/projective-different-claims.md).
+Every sumcheck benchmark has explicit `-claim-aware` and `-claim-unaware`
+variants. Aware kernels compute two round quantities using the incoming claim;
+unaware kernels compute three independently. Original Rust entry points retain
+their previous defaults.
+
+Unweighted `flipped` and `flipped_delayed` reverse g during binding. Weighted
+`projective-different-claims` and `flipped-different-claims`, including delayed
+versions, preweight f during the first evaluation pass. Their final values are
+`f(a*r), g(r)` and `f(a*r), g_rev(r)`, respectively. Preweighting is timed.
+See [the claim modes, arithmetic counts and benchmark commands](docs/claim-modes-and-flipped.md).

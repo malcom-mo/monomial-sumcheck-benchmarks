@@ -7,6 +7,7 @@ import argparse
 import json
 import math
 import random
+import re
 import statistics
 import sys
 from pathlib import Path
@@ -177,26 +178,88 @@ def markdown(summary: dict[str, object]) -> str:
     assert isinstance(warnings, list)
     if warnings:
         lines.extend(["> **Not ready for paper use.** " + " ".join(warnings), ""])
-    lines.extend([
-        "| Benchmark | Processes | Median | 99% CI | p01 | p99 |",
-        "|---|---:|---:|---:|---:|---:|",
-    ])
     benchmarks = summary["benchmarks"]
     assert isinstance(benchmarks, dict)
-    for name, stats_value in benchmarks.items():
-        stats = stats_value
-        assert isinstance(stats, dict)
+
+    def row(columns: list[str], stats: dict[str, object], winner: bool = False) -> str:
         median, unit = human_time(float(stats["median"]))
-        # Every column of a row uses the median's unit.
+        # Every time column of a row uses the median's unit.
         divisor = {"ns": 1.0, "us": 1_000.0, "ms": 1_000_000.0}[unit]
         low = float(stats["median_ci99_low"]) / divisor
         high = float(stats["median_ci99_high"]) / divisor
         p01 = float(stats["p01"]) / divisor
         p99 = float(stats["p99"]) / divisor
-        lines.append(
-            f"| {name} | {stats['processes']} | {median:.3f} {unit} | "
+        median_text = f"{median:.3f} {unit}"
+        if winner:
+            median_text = f"**{median_text}**"
+        return "| " + " | ".join(columns) + (
+            f" | {stats['processes']} | {median_text} | "
             f"[{low:.3f}, {high:.3f}] {unit} | {p01:.3f} {unit} | {p99:.3f} {unit} |"
         )
+
+    # Criterion replaces the slash inside a group name with an underscore in
+    # its report directories. Accept both stored and original benchmark IDs.
+    pattern = re.compile(
+        r"(sumcheck_deg2_eq|sumcheck_deg2)[/_]([^/]+)/"
+        r"([^/]+)-claim-(aware|unaware)/(\d+)"
+    )
+    grouped: dict[tuple[str, str], list[tuple[bool, str, int, str, dict]]] = {}
+    other: list[tuple[str, dict]] = []
+    for name, stats in benchmarks.items():
+        assert isinstance(stats, dict)
+        match = pattern.fullmatch(name)
+        if not match:
+            other.append((name, stats))
+            continue
+        suite, field, kernel, awareness, size = match.groups()
+        delayed = "delayed" in kernel
+        if kernel == "delayed":
+            kernel = "boolean"
+        elif kernel == "proj_delayed":
+            kernel = "projective"
+        else:
+            kernel = kernel.removesuffix("_delayed").removesuffix("-delayed")
+        scope = "Weighted" if suite == "sumcheck_deg2_eq" else "Unweighted"
+        grouped.setdefault((field, awareness), []).append(
+            (delayed, scope, int(size), kernel, stats)
+        )
+
+    kernel_order = {
+        "boolean": 0, "projective": 1, "projective_1inf": 2,
+        "flipped": 3, "projective-different-claims": 4,
+        "flipped-different-claims": 5,
+    }
+    for (field, awareness), entries in sorted(grouped.items()):
+        lines.extend([
+            f"## {field} — claim-{awareness}",
+            "",
+            "| Scope | Kernel | n | Processes | Median | 99% CI | p01 | p99 |",
+            "|---|---|---:|---:|---:|---:|---:|---:|",
+        ])
+        entries.sort(key=lambda entry: (
+            entry[1] == "Weighted", entry[0], entry[2],
+            kernel_order.get(entry[3], len(kernel_order)), entry[3],
+        ))
+        winners: dict[tuple[str, int], float] = {}
+        for _, scope, size, _, stats in entries:
+            key = (scope, size)
+            median = float(stats["median"])
+            winners[key] = min(winners.get(key, median), median)
+        for delayed, scope, size, kernel, stats in entries:
+            label = kernel + (" (delayed)" if delayed else "")
+            winner = float(stats["median"]) == winners[(scope, size)]
+            lines.append(row([scope, label, str(size)], stats, winner))
+        lines.append("")
+
+    if other:
+        if grouped:
+            lines.extend(["## Other benchmarks", ""])
+        lines.extend([
+            "| Benchmark | Processes | Median | 99% CI | p01 | p99 |",
+            "|---|---:|---:|---:|---:|---:|",
+        ])
+        for name, stats in other:
+            lines.append(row([name], stats))
 
     pairs = summary["pairs"]
     assert isinstance(pairs, dict)
