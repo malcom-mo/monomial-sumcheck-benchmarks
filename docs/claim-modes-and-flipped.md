@@ -68,19 +68,19 @@ on this branch; the weighted flipped comparison uses stored preweighting.
 
 ## Arithmetic in the current implementations
 
-Let N=2^n, n>=1, and P=N-1. Counts include evaluation and binding. A/S count
+Let N=2^n, n>=1. Counts include evaluation and binding. A/S count
 additions/subtractions; fused multiply-add is one multiplication plus one
 addition. These are implemented logical counts, not proposed minima.
 
-| Kernel | Aware M | Unaware M | Aware A | Unaware A | S in either mode |
+| Kernel | Aware M | Aware A | Unaware M | Unaware A | S in either mode |
 |---|---:|---:|---:|---:|---:|
-| Unweighted Boolean | 4P | 5P | 4P | 5P | 4P |
-| Unweighted projective | 4P | 5P | 6P | 7P | 0 |
-| Unweighted flipped | 4P | 5P | 4P | 7P | 0 |
-| Weighted Boolean | 6P | 7P | 4P | 5P | 4P |
-| Weighted projective | 6P | 7P | 6P | 7P | 0 |
-| Projective different claims | 5N-4 | 6N-5 | 6P | 7P | 0 |
-| Flipped different claims | 5N-4 | 6N-5 | 4P | 7P | 0 |
+| Unweighted Boolean | 4N-4 | 4N-4 | 5N-5 | 5N-5 | 4N-4 |
+| Unweighted projective | 4N-4 | 6N-6 | 5N-5 | 7N-7 | 0 |
+| Unweighted flipped | 4N-4 | **4N-4** | 5N-5 | 7N-7 | 0 |
+| Weighted Boolean | 6N-6 | 4N-4 | 7N-7 | 5N-5 | 4N-4 |
+| Weighted projective | 6N-6 | 6N-6 | 7N-7 | 7N-7 | 0 |
+| Projective different claims | **5N-4** | 6N-6 | **6N-5** | 7N-7 | 0 |
+| Flipped different claims | **5N-4** | **4N-4** | **6N-5** | 7N-7 | 0 |
 
 For n=0 all kernels do no work. Unit-weight multiplications and initial
 accumulator additions are not special-cased. Neither are Boolean differences

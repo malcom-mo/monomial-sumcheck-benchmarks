@@ -1,0 +1,55 @@
+{
+  "schema": 3,
+  "created_at_utc": "2026-10-27T18:07:13.753804+00:00",
+  "collector_argv": [
+    "scripts/collect.py",
+    "--suite",
+    "sumcheck",
+    "--filter",
+    "/20$",
+    "--repetitions",
+    "5",
+    "--label",
+    "full-n20-reps5",
+    "--max-load-per-cpu",
+    "0.6",
+    "--allow-dirty"
+  ],
+  "commands": [
+    [
+      "cargo",
+      "bench",
+      "--bench",
+      "sumcheck",
+      "--",
+      "/20$",
+      "--noplot"
+    ]
+  ],
+  "repetitions": 5,
+  "pairing": "exploratory: one cargo process runs every case the filter matches",
+  "max_load_per_cpu": 0.6,
+  "allow_busy": false,
+  "allow_dirty": true,
+  "initial_load": {
+    "captured_at_utc": "2026-10-27T18:07:13.748734+00:00",
+    "load_average_1m": 2.1650390625,
+    "load_average_5m": 2.576171875,
+    "load_average_15m": 2.6357421875,
+    "logical_cpus": 10,
+    "load_1m_per_logical_cpu": 0.21650390625
+  },
+  "git_commit": "15a23f078e10416a1be069c73b02fb88ea60e0cc",
+  "git_status": "\u001b[31m??\u001b[m .local/\n\u001b[31m??\u001b[m operations.md\n\u001b[31m??\u001b[m pr-summary.md\n\u001b[31m??\u001b[m protocol.md",
+  "git_diff_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "rustc": "rustc 1.94.0 (4a4ef493e 2026-03-02)\nbinary: rustc\ncommit-hash: 4a4ef493e3a1488c6e321570238084b38948f6db\ncommit-date: 2026-03-02\nhost: aarch64-apple-darwin\nrelease: 1.94.0\nLLVM version: 21.1.8",
+  "cargo": "cargo 1.94.0 (85eff7c80 2026-01-15)",
+  "python": "3.15.1 (main, Oct 21 2026, 05:55:12) [Clang 21.0.0 (clang-2100.3.34.2)]",
+  "platform": "macOS-27.0.1-arm64-arm-64bit-Mach-O",
+  "uname": "Darwin localhost 27.0.0 Darwin Kernel Version 27.0.0: Tue Aug 11 21:22:49 PDT 2026; root:xnu-13432.1.9~1/RELEASE_ARM64_T6000 arm64",
+  "os_version": "ProductName:\t\tmacOS\nProductVersion:\t\t27.0.1\nBuildVersion:\t\t26A434",
+  "cpu": "Apple M1 Pro",
+  "cargo_target_dir": "target",
+  "rustflags": "",
+  "cargo_encoded_rustflags": ""
+}

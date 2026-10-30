@@ -1,0 +1,2779 @@
+    Finished `bench` profile [optimized] target(s) in 0.37s
+     Running benches/sumcheck.rs (target/release/deps/sumcheck-3b706c336da0a6ad)
+Gnuplot not found, using plotters backend
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 18.575 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254/proj_delayed-claim-aware/20
+                        time:   [89.733 ms 89.767 ms 89.825 ms]
+                        change: [-0.7618% -0.2509% -0.0158%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/BN254/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254/flipped-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 17.0s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2/BN254/flipped-claim-unaware/20: Collecting 100 samples in estimated 16.957 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254/flipped-claim-unaware/20
+                        time:   [168.07 ms 171.51 ms 176.86 ms]
+                        change: [+0.8475% +2.8531% +5.7365%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 16 outliers among 100 measurements (16.00%)
+  3 (3.00%) high mild
+  13 (13.00%) high severe
+Benchmarking sumcheck_deg2/BN254/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/BN254/flipped-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.9s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254/flipped-claim-aware/20: Collecting 100 samples in estimated 12.893 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/BN254/flipped-claim-aware/20
+                        time:   [123.67 ms 123.73 ms 123.81 ms]
+                        change: [-0.0249% +0.0800% +0.1651%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/BN254/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254/boolean-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 19.3s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2/BN254/boolean-claim-unaware/20: Collecting 100 samples in estimated 19.316 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254/boolean-claim-unaware/20
+                        time:   [187.45 ms 210.51 ms 260.65 ms]
+                        change: [+0.3153% +12.887% +42.597%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 17 outliers among 100 measurements (17.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  13 (13.00%) high severe
+Benchmarking sumcheck_deg2/BN254/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254/delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.3s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2/BN254/delayed-claim-aware/20: Collecting 100 samples in estimated 10.301 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254/delayed-claim-aware/20
+                        time:   [99.445 ms 99.631 ms 99.947 ms]
+                        change: [-3.1804% -1.4652% -0.1476%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BN254/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/BN254/boolean-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 16.3s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2/BN254/boolean-claim-aware/20: Collecting 100 samples in estimated 16.270 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/BN254/boolean-claim-aware/20
+                        time:   [158.00 ms 158.20 ms 158.41 ms]
+                        change: [-1.4518% -0.4105% +0.1862%] (p = 0.27 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BN254/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254/delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.3s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2/BN254/delayed-claim-unaware/20: Collecting 100 samples in estimated 11.259 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254/delayed-claim-unaware/20
+                        time:   [109.87 ms 109.92 ms 110.00 ms]
+                        change: [-8.2329% -3.7647% -0.7549%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  8 (8.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.2s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.237 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254/proj_delayed-claim-unaware/20
+                        time:   [99.794 ms 100.49 ms 101.80 ms]
+                        change: [+0.1861% +0.8971% +2.2511%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  2 (2.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.4s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.356 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254/flipped_delayed-claim-unaware/20
+                        time:   [101.05 ms 101.12 ms 101.26 ms]
+                        change: [+0.1051% +0.2250% +0.3649%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) low severe
+  6 (6.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 16.186 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254/flipped_delayed-claim-aware/20
+                        time:   [78.325 ms 78.357 ms 78.402 ms]
+                        change: [-1.3014% -0.4187% +0.0786%] (p = 0.14 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/BN254/projective-claim-aware/20
+Benchmarking sumcheck_deg2/BN254/projective-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 14.4s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2/BN254/projective-claim-aware/20: Collecting 100 samples in estimated 14.441 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/projective-claim-aware/20: Analyzing
+sumcheck_deg2/BN254/projective-claim-aware/20
+                        time:   [139.64 ms 139.72 ms 139.80 ms]
+                        change: [-3.6063% -1.0943% +0.0818%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high mild
+Benchmarking sumcheck_deg2/BN254/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254/projective-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 17.0s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2/BN254/projective-claim-unaware/20: Collecting 100 samples in estimated 17.016 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254/projective-claim-unaware/20
+                        time:   [166.34 ms 166.42 ms 166.55 ms]
+                        change: [-1.6224% -0.3638% +0.1633%] (p = 0.53 > 0.05)
+                        No change in performance detected.
+Found 15 outliers among 100 measurements (15.00%)
+  1 (1.00%) low severe
+  10 (10.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.2s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 15.151 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/flipped-different-claims-claim-aware/20
+                        time:   [145.92 ms 145.98 ms 146.09 ms]
+                        change: [-0.1353% +0.1622% +0.3475%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 16.7s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 16.705 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/projective-different-claims-claim-aware/20
+                        time:   [163.09 ms 163.16 ms 163.25 ms]
+                        change: [+0.0993% +0.1661% +0.2389%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  7 (7.00%) low mild
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.6s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 12.609 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [126.87 ms 126.99 ms 127.19 ms]
+                        change: [+0.1051% +0.2518% +0.4754%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 20.6s, or reduce sample count to 40.
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-aware/20: Collecting 100 samples in estimated 20.611 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/boolean-claim-aware/20
+                        time:   [202.33 ms 202.50 ms 202.71 ms]
+                        change: [-0.8174% -0.2264% +0.1232%] (p = 0.28 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) high mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 23.4s, or reduce sample count to 40.
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-unaware/20: Collecting 100 samples in estimated 23.407 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/boolean-claim-unaware/20
+                        time:   [231.16 ms 232.25 ms 233.72 ms]
+                        change: [+0.1993% +0.8352% +1.4855%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 13 outliers among 100 measurements (13.00%)
+  5 (5.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.7s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 13.663 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/proj_delayed-claim-aware/20
+                        time:   [131.97 ms 132.07 ms 132.19 ms]
+                        change: [-0.6645% +0.0659% +0.3868%] (p = 0.83 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 14.7s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 14.685 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/proj_delayed-claim-unaware/20
+                        time:   [142.82 ms 142.90 ms 142.98 ms]
+                        change: [+0.3033% +0.4128% +0.4883%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 21.5s, or reduce sample count to 40.
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-unaware/20: Collecting 100 samples in estimated 21.450 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/projective-claim-unaware/20
+                        time:   [210.93 ms 211.15 ms 211.41 ms]
+                        change: [+0.2123% +0.3351% +0.4919%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  4 (4.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 18.9s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-aware/20: Collecting 100 samples in estimated 18.910 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/projective-claim-aware/20
+                        time:   [185.91 ms 186.16 ms 186.51 ms]
+                        change: [-0.1490% +0.1941% +0.4345%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.6s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 11.602 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-aware/20
+                        time:   [112.15 ms 112.28 ms 112.49 ms]
+                        change: [-0.6602% -0.0212% +0.3919%] (p = 0.93 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.1s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.116 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/flipped-different-claims-delayed-claim-aware/20
+                        time:   [98.278 ms 98.428 ms 98.716 ms]
+                        change: [-0.3426% +0.1579% +0.5632%] (p = 0.40 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 19.5s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 19.482 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/flipped-different-claims-claim-unaware/20
+                        time:   [191.32 ms 192.00 ms 192.88 ms]
+                        change: [+0.4275% +0.8017% +1.3565%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 15 outliers among 100 measurements (15.00%)
+  5 (5.00%) high mild
+  10 (10.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 19.5s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 19.463 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/projective-different-claims-claim-unaware/20
+                        time:   [191.05 ms 191.32 ms 191.74 ms]
+                        change: [+0.3868% +0.5464% +0.7638%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  9 (9.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.6s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 12.643 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/projective-different-claims-delayed-claim-unaware/20
+                        time:   [122.53 ms 122.75 ms 123.04 ms]
+                        change: [-0.0572% +0.3041% +0.6119%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.0s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-aware/20: Collecting 100 samples in estimated 15.012 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254/delayed-claim-aware/20
+                        time:   [145.88 ms 146.03 ms 146.32 ms]
+                        change: [+0.0470% +0.1827% +0.3649%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  6 (6.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.5s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-unaware/20: Collecting 100 samples in estimated 15.460 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254/delayed-claim-unaware/20
+                        time:   [150.45 ms 150.76 ms 151.31 ms]
+                        change: [-0.6497% +0.0230% +0.5238%] (p = 0.94 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 19.270 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_bf/proj_delayed-claim-unaware/20
+                        time:   [91.720 ms 91.831 ms 91.970 ms]
+                        change: [-0.4948% +0.2998% +0.6913%] (p = 0.25 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.1s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-aware/20: Collecting 100 samples in estimated 12.121 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_bf/boolean-claim-aware/20
+                        time:   [118.40 ms 118.51 ms 118.66 ms]
+                        change: [+0.2572% +0.3826% +0.5051%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-aware/20: Collecting 100 samples in estimated 18.886 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_bf/delayed-claim-aware/20
+                        time:   [92.416 ms 92.505 ms 92.628 ms]
+                        change: [+0.0775% +0.2076% +0.3584%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.3s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-unaware/20: Collecting 100 samples in estimated 13.259 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_bf/projective-claim-unaware/20
+                        time:   [130.69 ms 130.75 ms 130.82 ms]
+                        change: [+0.3661% +0.4374% +0.5009%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.5s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-unaware/20: Collecting 100 samples in estimated 10.504 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_bf/delayed-claim-unaware/20
+                        time:   [103.25 ms 103.39 ms 103.62 ms]
+                        change: [+0.3192% +0.4701% +0.6910%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 18.677 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_bf/flipped_delayed-claim-unaware/20
+                        time:   [91.626 ms 91.682 ms 91.752 ms]
+                        change: [+0.2049% +0.2965% +0.3833%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  9 (9.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.9s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-unaware/20: Collecting 100 samples in estimated 13.853 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_bf/boolean-claim-unaware/20
+                        time:   [137.01 ms 137.62 ms 138.37 ms]
+                        change: [+0.6573% +1.1321% +1.7610%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  2 (2.00%) high mild
+  10 (10.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-aware/20: Collecting 100 samples in estimated 19.622 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_bf/flipped-claim-aware/20
+                        time:   [95.325 ms 95.657 ms 96.055 ms]
+                        change: [+0.7472% +1.1155% +1.4797%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 15 outliers among 100 measurements (15.00%)
+  1 (1.00%) high mild
+  14 (14.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 14.300 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_bf/flipped_delayed-claim-aware/20
+                        time:   [69.736 ms 69.857 ms 70.042 ms]
+                        change: [+0.2757% +0.4466% +0.7425%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.1s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-unaware/20: Collecting 100 samples in estimated 13.101 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_bf/flipped-claim-unaware/20
+                        time:   [128.62 ms 128.65 ms 128.69 ms]
+                        change: [-7.1031% -2.0268% +0.0836%] (p = 0.24 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  5 (5.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 16.533 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_bf/proj_delayed-claim-aware/20
+                        time:   [81.307 ms 81.704 ms 82.226 ms]
+                        change: [+0.5648% +1.0336% +1.6379%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 15 outliers among 100 measurements (15.00%)
+  1 (1.00%) high mild
+  14 (14.00%) high severe
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.0s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-aware/20: Collecting 100 samples in estimated 10.956 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_bf/projective-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_bf/projective-claim-aware/20
+                        time:   [108.23 ms 109.01 ms 110.62 ms]
+                        change: [+0.4647% +1.2053% +2.9424%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 20 outliers among 100 measurements (20.00%)
+  3 (3.00%) high mild
+  17 (17.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.6s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.555 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-aware/20
+                        time:   [102.12 ms 102.33 ms 102.62 ms]
+                        change: [-0.6474% +0.4499% +1.1793%] (p = 0.24 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 16.5s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-aware/20: Collecting 100 samples in estimated 16.470 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/boolean-claim-aware/20
+                        time:   [161.31 ms 162.17 ms 163.46 ms]
+                        change: [+0.3136% +0.8454% +1.5375%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 17 outliers among 100 measurements (17.00%)
+  1 (1.00%) high mild
+  16 (16.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.0s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-aware/20: Collecting 100 samples in estimated 14.988 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/projective-claim-aware/20
+                        time:   [147.78 ms 148.05 ms 148.37 ms]
+                        change: [+0.3923% +0.5528% +0.7769%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 14 outliers among 100 measurements (14.00%)
+  4 (4.00%) high mild
+  10 (10.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.7s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 11.724 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-aware/20
+                        time:   [115.37 ms 115.78 ms 116.33 ms]
+                        change: [+0.4049% +0.7694% +1.2517%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 16 outliers among 100 measurements (16.00%)
+  1 (1.00%) high mild
+  15 (15.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.3s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 12.325 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-aware/20
+                        time:   [121.66 ms 121.86 ms 122.16 ms]
+                        change: [+0.3043% +0.4697% +0.7343%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 17.9s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-unaware/20: Collecting 100 samples in estimated 17.862 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/boolean-claim-unaware/20
+                        time:   [176.23 ms 176.45 ms 176.74 ms]
+                        change: [-0.4641% +0.0385% +0.3122%] (p = 0.85 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.3s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 13.341 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/proj_delayed-claim-unaware/20
+                        time:   [131.74 ms 131.91 ms 132.15 ms]
+                        change: [-4.1188% -1.4809% +0.2801%] (p = 0.10 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 14.5s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-unaware/20: Collecting 100 samples in estimated 14.527 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/delayed-claim-unaware/20
+                        time:   [143.00 ms 143.16 ms 143.35 ms]
+                        change: [+0.2596% +0.3789% +0.5526%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.9s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 12.937 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-aware/20
+                        time:   [127.16 ms 127.25 ms 127.38 ms]
+                        change: [+0.2520% +0.3521% +0.4485%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.2s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 15.238 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/flipped-different-claims-claim-unaware/20
+                        time:   [150.40 ms 150.52 ms 150.65 ms]
+                        change: [+0.1751% +0.2764% +0.3862%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  4 (4.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.5s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-aware/20: Collecting 100 samples in estimated 13.509 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/delayed-claim-aware/20
+                        time:   [133.05 ms 133.54 ms 134.57 ms]
+                        change: [+0.2565% +0.6287% +1.4096%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 17.2s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-unaware/20: Collecting 100 samples in estimated 17.238 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/projective-claim-unaware/20
+                        time:   [170.09 ms 170.56 ms 171.38 ms]
+                        change: [+0.2706% +0.5420% +1.1590%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.4s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 11.382 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [112.08 ms 112.14 ms 112.21 ms]
+                        change: [+0.1587% +0.2839% +0.3708%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.2s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 15.237 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/projective-different-claims-claim-unaware/20
+                        time:   [149.93 ms 150.51 ms 151.34 ms]
+                        change: [-1.7528% -0.4157% +0.7246%] (p = 0.41 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.5s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 11.464 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/projective-different-claims-delayed-claim-unaware/20
+                        time:   [112.29 ms 112.35 ms 112.42 ms]
+                        change: [+0.2390% +0.3272% +0.4056%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  6 (6.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 18.234 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_bf/flipped-different-claims-delayed-claim-aware/20
+                        time:   [91.217 ms 92.960 ms 95.711 ms]
+                        change: [+2.0735% +4.0081% +6.9808%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 18 outliers among 100 measurements (18.00%)
+  7 (7.00%) high mild
+  11 (11.00%) high severe
+
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 14.821 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_upper/proj_delayed-claim-aware/20
+                        time:   [70.453 ms 70.815 ms 71.306 ms]
+                        change: [+0.7282% +1.2331% +2.0092%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 15 outliers among 100 measurements (15.00%)
+  2 (2.00%) high mild
+  13 (13.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 16.769 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_upper/flipped_delayed-claim-unaware/20
+                        time:   [81.592 ms 82.407 ms 83.457 ms]
+                        change: [+1.3492% +2.2481% +3.4549%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 16 outliers among 100 measurements (16.00%)
+  3 (3.00%) high mild
+  13 (13.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.6s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-unaware/20: Collecting 100 samples in estimated 13.595 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_upper/projective-claim-unaware/20
+                        time:   [130.71 ms 131.29 ms 132.32 ms]
+                        change: [-0.8809% +0.2190% +1.2521%] (p = 0.61 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-aware/20: Collecting 100 samples in estimated 18.699 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_upper/flipped-claim-aware/20
+                        time:   [90.790 ms 91.285 ms 91.944 ms]
+                        change: [+0.3164% +1.2051% +2.0742%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.5s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-aware/20: Collecting 100 samples in estimated 10.457 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/projective-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_upper/projective-claim-aware/20
+                        time:   [101.45 ms 101.71 ms 102.17 ms]
+                        change: [-0.4606% +0.3874% +1.0006%] (p = 0.19 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-aware/20: Collecting 100 samples in estimated 16.401 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_upper/delayed-claim-aware/20
+                        time:   [80.012 ms 80.625 ms 81.350 ms]
+                        change: [+1.2899% +1.9557% +2.9743%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 17 outliers among 100 measurements (17.00%)
+  3 (3.00%) high mild
+  14 (14.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 16.520 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_upper/proj_delayed-claim-unaware/20
+                        time:   [79.961 ms 80.163 ms 80.481 ms]
+                        change: [-0.1442% +0.5127% +1.0336%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.8s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-unaware/20: Collecting 100 samples in estimated 13.824 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_upper/boolean-claim-unaware/20
+                        time:   [135.10 ms 135.41 ms 136.05 ms]
+                        change: [-1.6826% -0.2431% +0.7576%] (p = 0.68 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.2s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-unaware/20: Collecting 100 samples in estimated 13.183 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_upper/flipped-claim-unaware/20
+                        time:   [127.99 ms 128.34 ms 129.09 ms]
+                        change: [-0.5983% +0.4808% +1.2643%] (p = 0.18 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 12.409 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_upper/flipped_delayed-claim-aware/20
+                        time:   [58.853 ms 58.879 ms 58.911 ms]
+                        change: [+0.1947% +0.2893% +0.3648%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.4s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-aware/20: Collecting 100 samples in estimated 11.418 s (100 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/BN254_upper/boolean-claim-aware/20
+                        time:   [111.47 ms 111.50 ms 111.54 ms]
+                        change: [+0.2358% +0.3236% +0.3862%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-unaware/20: Collecting 100 samples in estimated 18.187 s (200 iterations)
+Benchmarking sumcheck_deg2/BN254_upper/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BN254_upper/delayed-claim-unaware/20
+                        time:   [88.753 ms 88.798 ms 88.872 ms]
+                        change: [-0.7627% +0.0894% +0.6118%] (p = 0.78 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low severe
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 17.1s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-unaware/20: Collecting 100 samples in estimated 17.058 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/projective-claim-unaware/20
+                        time:   [166.77 ms 166.84 ms 166.96 ms]
+                        change: [-0.4431% -0.3744% -0.2997%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 16 outliers among 100 measurements (16.00%)
+  2 (2.00%) low severe
+  6 (6.00%) low mild
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.4s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-aware/20: Collecting 100 samples in estimated 15.441 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/boolean-claim-aware/20
+                        time:   [150.98 ms 151.05 ms 151.19 ms]
+                        change: [-0.2386% -0.1450% -0.0422%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low severe
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.5s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 10.518 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [107.37 ms 107.41 ms 107.48 ms]
+                        change: [-0.9684% -0.9155% -0.8466%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 16.258 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/flipped-different-claims-delayed-claim-aware/20
+                        time:   [78.792 ms 78.828 ms 78.882 ms]
+                        change: [-1.2147% -0.3078% +0.2033%] (p = 0.37 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) low mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 13.4s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-unaware/20: Collecting 100 samples in estimated 13.400 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/delayed-claim-unaware/20
+                        time:   [131.20 ms 131.24 ms 131.30 ms]
+                        change: [-0.4963% -0.4383% -0.3861%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 10.6s, or reduce sample count to 90.
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 10.636 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-unaware/20
+                        time:   [103.19 ms 103.53 ms 104.43 ms]
+                        change: [-1.2551% -0.9095% +0.1861%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.4s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 15.444 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-unaware/20
+                        time:   [150.89 ms 150.94 ms 151.03 ms]
+                        change: [-0.9116% -0.8386% -0.7766%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.4s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-aware/20: Collecting 100 samples in estimated 12.381 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/delayed-claim-aware/20
+                        time:   [120.77 ms 120.79 ms 120.82 ms]
+                        change: [-0.5500% -0.5150% -0.4848%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.6s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 12.600 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-unaware/20
+                        time:   [122.55 ms 122.59 ms 122.66 ms]
+                        change: [-0.9198% -0.8608% -0.8065%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) low severe
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 18.2s, or reduce sample count to 50.
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-unaware/20: Collecting 100 samples in estimated 18.221 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/boolean-claim-unaware/20
+                        time:   [178.81 ms 178.88 ms 178.97 ms]
+                        change: [+0.0920% +0.1776% +0.2525%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) low mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 12.7s, or reduce sample count to 70.
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 12.749 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/projective-different-claims-claim-aware/20
+                        time:   [124.03 ms 124.08 ms 124.18 ms]
+                        change: [-0.8000% -0.7511% -0.6719%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 15.3s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 15.335 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-unaware/20
+                        time:   [149.20 ms 149.25 ms 149.35 ms]
+                        change: [+0.1110% +0.1548% +0.2204%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  1 (1.00%) low severe
+  7 (7.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 19.075 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/projective-different-claims-delayed-claim-aware/20
+                        time:   [92.737 ms 92.752 ms 92.768 ms]
+                        change: [-0.8278% -0.2545% +0.0312%] (p = 0.14 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 14.8s, or reduce sample count to 60.
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-aware/20: Collecting 100 samples in estimated 14.772 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/projective-claim-aware/20
+                        time:   [143.98 ms 144.04 ms 144.13 ms]
+                        change: [-0.5679% -0.4318% -0.3328%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low severe
+  2 (2.00%) low mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.7s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 11.665 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/proj_delayed-claim-aware/20
+                        time:   [112.80 ms 112.85 ms 112.94 ms]
+                        change: [-0.6066% -0.5129% -0.4295%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+
+Warning: Unable to complete 100 samples in 10.0s. You may wish to increase target time to 11.5s, or reduce sample count to 80.
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 11.509 s (100 iterations)
+Benchmarking sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BN254_upper/flipped-different-claims-claim-aware/20
+                        time:   [111.24 ms 111.26 ms 111.30 ms]
+                        change: [-1.0096% -0.9816% -0.9407%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+
+Benchmarking sumcheck_deg2/BB4/projective-claim-aware/20
+Benchmarking sumcheck_deg2/BB4/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/projective-claim-aware/20: Collecting 100 samples in estimated 10.965 s (500 iterations)
+Benchmarking sumcheck_deg2/BB4/projective-claim-aware/20: Analyzing
+sumcheck_deg2/BB4/projective-claim-aware/20
+                        time:   [20.742 ms 20.976 ms 21.423 ms]
+                        change: [-0.1211% +1.0321% +3.5789%] (p = 0.16 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2/BB4/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BB4/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/delayed-claim-aware/20: Collecting 100 samples in estimated 10.437 s (600 iterations)
+Benchmarking sumcheck_deg2/BB4/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BB4/delayed-claim-aware/20
+                        time:   [16.306 ms 16.314 ms 16.324 ms]
+                        change: [-0.0389% +0.0904% +0.1859%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.337 s (500 iterations)
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BB4/flipped_delayed-claim-unaware/20
+                        time:   [19.589 ms 19.597 ms 19.608 ms]
+                        change: [-0.1109% -0.0486% +0.0145%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 11.468 s (700 iterations)
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BB4/proj_delayed-claim-aware/20
+                        time:   [15.291 ms 15.299 ms 15.307 ms]
+                        change: [-0.0894% +0.0386% +0.1392%] (p = 0.41 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BB4/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/BB4/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/boolean-claim-aware/20: Collecting 100 samples in estimated 11.468 s (500 iterations)
+Benchmarking sumcheck_deg2/BB4/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/BB4/boolean-claim-aware/20
+                        time:   [21.801 ms 21.816 ms 21.845 ms]
+                        change: [-0.0776% +0.0748% +0.2203%] (p = 0.23 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) low severe
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BB4/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/BB4/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/boolean-claim-unaware/20: Collecting 100 samples in estimated 10.987 s (400 iterations)
+Benchmarking sumcheck_deg2/BB4/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/BB4/boolean-claim-unaware/20
+                        time:   [26.327 ms 26.419 ms 26.625 ms]
+                        change: [+0.1042% +0.4744% +1.4011%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  5 (5.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.666 s (500 iterations)
+Benchmarking sumcheck_deg2/BB4/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BB4/proj_delayed-claim-unaware/20
+                        time:   [20.252 ms 20.256 ms 20.259 ms]
+                        change: [+0.0466% +0.0797% +0.1096%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high mild
+Benchmarking sumcheck_deg2/BB4/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/BB4/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/flipped-claim-aware/20: Collecting 100 samples in estimated 10.680 s (500 iterations)
+Benchmarking sumcheck_deg2/BB4/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/BB4/flipped-claim-aware/20
+                        time:   [20.275 ms 20.286 ms 20.309 ms]
+                        change: [+0.0067% +0.1059% +0.2055%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BB4/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/BB4/flipped-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/flipped-claim-unaware/20: Collecting 100 samples in estimated 10.613 s (400 iterations)
+Benchmarking sumcheck_deg2/BB4/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/BB4/flipped-claim-unaware/20
+                        time:   [25.412 ms 25.426 ms 25.453 ms]
+                        change: [-2.1237% -0.6060% +0.1426%] (p = 0.25 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 10.605 s (700 iterations)
+Benchmarking sumcheck_deg2/BB4/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BB4/flipped_delayed-claim-aware/20
+                        time:   [14.065 ms 14.069 ms 14.074 ms]
+                        change: [+0.0082% +0.0919% +0.1539%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BB4/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BB4/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/delayed-claim-unaware/20: Collecting 100 samples in estimated 11.347 s (500 iterations)
+Benchmarking sumcheck_deg2/BB4/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BB4/delayed-claim-unaware/20
+                        time:   [21.605 ms 21.612 ms 21.622 ms]
+                        change: [-0.0921% +0.0181% +0.0949%] (p = 0.66 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BB4/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/BB4/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB4/projective-claim-unaware/20: Collecting 100 samples in estimated 10.448 s (400 iterations)
+Benchmarking sumcheck_deg2/BB4/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/BB4/projective-claim-unaware/20
+                        time:   [25.015 ms 25.029 ms 25.052 ms]
+                        change: [-0.0814% +0.0313% +0.1486%] (p = 0.50 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-aware/20: Collecting 100 samples in estimated 13.011 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/projective-claim-aware/20
+                        time:   [31.359 ms 31.371 ms 31.395 ms]
+                        change: [-0.3532% -0.0206% +0.1803%] (p = 0.87 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  1 (1.00%) low severe
+  2 (2.00%) low mild
+  6 (6.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-aware/20: Collecting 100 samples in estimated 13.137 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/boolean-claim-aware/20
+                        time:   [31.667 ms 31.674 ms 31.684 ms]
+                        change: [+0.1053% +0.1939% +0.2475%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.518 s (500 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-aware/20
+                        time:   [19.926 ms 19.937 ms 19.960 ms]
+                        change: [+0.2133% +0.3046% +0.4366%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  9 (9.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.729 s (500 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-aware/20
+                        time:   [20.389 ms 20.395 ms 20.405 ms]
+                        change: [+0.1605% +0.2136% +0.2800%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 10.950 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/projective-different-claims-claim-aware/20
+                        time:   [26.287 ms 26.295 ms 26.312 ms]
+                        change: [+0.1987% +0.2400% +0.3018%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-aware/20: Collecting 100 samples in estimated 11.422 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/delayed-claim-aware/20
+                        time:   [27.445 ms 27.452 ms 27.459 ms]
+                        change: [+0.0518% +0.1271% +0.1730%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  8 (8.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.218 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/proj_delayed-claim-unaware/20
+                        time:   [33.013 ms 33.024 ms 33.041 ms]
+                        change: [+0.0744% +0.1546% +0.2151%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-unaware/20: Collecting 100 samples in estimated 11.130 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/projective-claim-unaware/20
+                        time:   [35.857 ms 35.871 ms 35.899 ms]
+                        change: [-0.1314% +0.0461% +0.1917%] (p = 0.48 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-unaware/20: Collecting 100 samples in estimated 12.039 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/delayed-claim-unaware/20
+                        time:   [39.054 ms 39.064 ms 39.077 ms]
+                        change: [+0.0533% +0.1521% +0.2211%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 12.764 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/projective-different-claims-claim-unaware/20
+                        time:   [30.777 ms 30.797 ms 30.834 ms]
+                        change: [-2.1543% -0.6782% +0.1133%] (p = 0.14 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 10.648 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/flipped-different-claims-claim-aware/20
+                        time:   [25.529 ms 25.545 ms 25.573 ms]
+                        change: [+0.0086% +0.1990% +0.3412%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-unaware/20: Collecting 100 samples in estimated 11.349 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/boolean-claim-unaware/20
+                        time:   [36.609 ms 36.619 ms 36.632 ms]
+                        change: [-0.2048% +0.0439% +0.2060%] (p = 0.63 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 12.617 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [30.710 ms 31.153 ms 31.808 ms]
+                        change: [+0.9000% +2.2530% +4.0900%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 16 outliers among 100 measurements (16.00%)
+  1 (1.00%) high mild
+  15 (15.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 12.449 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/projective-different-claims-delayed-claim-unaware/20
+                        time:   [30.150 ms 31.163 ms 32.792 ms]
+                        change: [+1.4627% +4.7443% +10.607%] (p = 0.00 < 0.05)
+                        Performance has regressed.
+Found 17 outliers among 100 measurements (17.00%)
+  5 (5.00%) high mild
+  12 (12.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 11.701 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB4/proj_delayed-claim-aware/20
+                        time:   [27.008 ms 27.181 ms 27.393 ms]
+                        change: [+0.6485% +1.2814% +2.2125%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 20 outliers among 100 measurements (20.00%)
+  6 (6.00%) high mild
+  14 (14.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 12.779 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB4/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB4/flipped-different-claims-claim-unaware/20
+                        time:   [30.802 ms 30.815 ms 30.831 ms]
+                        change: [-0.3364% -0.1510% +0.0195%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+
+Benchmarking sumcheck_deg2/BB5/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/BB5/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/boolean-claim-aware/20: Collecting 100 samples in estimated 10.969 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/BB5/boolean-claim-aware/20
+                        time:   [25.752 ms 25.764 ms 25.782 ms]
+                        change: [+0.1118% +0.1671% +0.2522%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.112 s (300 iterations)
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BB5/flipped_delayed-claim-unaware/20
+                        time:   [32.155 ms 32.174 ms 32.203 ms]
+                        change: [+0.1247% +0.1883% +0.2769%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) low severe
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/BB5/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/BB5/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/boolean-claim-unaware/20: Collecting 100 samples in estimated 13.258 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/BB5/boolean-claim-unaware/20
+                        time:   [31.571 ms 31.599 ms 31.637 ms]
+                        change: [-0.1260% +0.0781% +0.2475%] (p = 0.30 > 0.05)
+                        No change in performance detected.
+Found 12 outliers among 100 measurements (12.00%)
+  6 (6.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/BB5/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/BB5/flipped-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/flipped-claim-unaware/20: Collecting 100 samples in estimated 13.079 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/BB5/flipped-claim-unaware/20
+                        time:   [31.175 ms 31.192 ms 31.214 ms]
+                        change: [+0.0338% +0.1619% +0.2643%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) low mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/BB5/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/BB5/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/flipped-claim-aware/20: Collecting 100 samples in estimated 10.547 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/BB5/flipped-claim-aware/20
+                        time:   [24.776 ms 24.786 ms 24.805 ms]
+                        change: [+0.0697% +0.1446% +0.2310%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/BB5/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BB5/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/delayed-claim-unaware/20: Collecting 100 samples in estimated 10.450 s (300 iterations)
+Benchmarking sumcheck_deg2/BB5/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BB5/delayed-claim-unaware/20
+                        time:   [33.298 ms 33.307 ms 33.316 ms]
+                        change: [+0.0061% +0.0882% +0.1437%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) low mild
+  1 (1.00%) high mild
+Benchmarking sumcheck_deg2/BB5/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BB5/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/delayed-claim-aware/20: Collecting 100 samples in estimated 10.690 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BB5/delayed-claim-aware/20
+                        time:   [25.212 ms 25.230 ms 25.258 ms]
+                        change: [-0.0448% +0.0544% +0.1609%] (p = 0.20 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 10.503 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BB5/proj_delayed-claim-aware/20
+                        time:   [24.733 ms 24.754 ms 24.784 ms]
+                        change: [+0.0662% +0.1888% +0.3269%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 13 outliers among 100 measurements (13.00%)
+  3 (3.00%) low mild
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.166 s (300 iterations)
+Benchmarking sumcheck_deg2/BB5/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/BB5/proj_delayed-claim-unaware/20
+                        time:   [32.359 ms 32.376 ms 32.401 ms]
+                        change: [+0.0223% +0.1424% +0.2386%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BB5/projective-claim-aware/20
+Benchmarking sumcheck_deg2/BB5/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/projective-claim-aware/20: Collecting 100 samples in estimated 10.636 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/projective-claim-aware/20: Analyzing
+sumcheck_deg2/BB5/projective-claim-aware/20
+                        time:   [25.048 ms 25.069 ms 25.095 ms]
+                        change: [-0.5716% +0.0524% +0.3303%] (p = 0.83 > 0.05)
+                        No change in performance detected.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) low mild
+  3 (3.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BB5/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/BB5/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/projective-claim-unaware/20: Collecting 100 samples in estimated 12.874 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/BB5/projective-claim-unaware/20
+                        time:   [30.681 ms 30.697 ms 30.724 ms]
+                        change: [-0.1189% +0.0619% +0.1940%] (p = 0.34 > 0.05)
+                        No change in performance detected.
+Found 11 outliers among 100 measurements (11.00%)
+  5 (5.00%) low mild
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 10.248 s (400 iterations)
+Benchmarking sumcheck_deg2/BB5/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/BB5/flipped_delayed-claim-aware/20
+                        time:   [24.106 ms 24.119 ms 24.146 ms]
+                        change: [+0.0097% +0.1186% +0.2376%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 11.349 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [36.306 ms 36.362 ms 36.454 ms]
+                        change: [-0.0300% +0.1996% +0.4892%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 12.973 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/flipped-different-claims-claim-unaware/20
+                        time:   [41.655 ms 41.707 ms 41.786 ms]
+                        change: [-0.0044% +0.1604% +0.3463%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 13.048 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/flipped-different-claims-delayed-claim-aware/20
+                        time:   [31.068 ms 31.096 ms 31.128 ms]
+                        change: [+0.2676% +0.3486% +0.4553%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high mild
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-unaware/20: Collecting 100 samples in estimated 13.630 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/delayed-claim-unaware/20
+                        time:   [43.810 ms 43.822 ms 43.836 ms]
+                        change: [-0.0129% +0.0729% +0.1472%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-unaware/20: Collecting 100 samples in estimated 10.863 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/boolean-claim-unaware/20
+                        time:   [52.519 ms 52.560 ms 52.627 ms]
+                        change: [+0.0489% +0.1289% +0.2482%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 12.208 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/proj_delayed-claim-aware/20
+                        time:   [39.071 ms 39.089 ms 39.113 ms]
+                        change: [-0.1175% -0.0439% +0.0304%] (p = 0.14 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  3 (3.00%) low mild
+  3 (3.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 13.422 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/proj_delayed-claim-unaware/20
+                        time:   [43.214 ms 43.238 ms 43.276 ms]
+                        change: [+0.1040% +0.1641% +0.2471%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 12.993 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-aware/20
+                        time:   [32.562 ms 32.579 ms 32.604 ms]
+                        change: [+0.0989% +0.1642% +0.2553%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 11.821 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/flipped-different-claims-claim-aware/20
+                        time:   [37.900 ms 37.912 ms 37.932 ms]
+                        change: [+0.0692% +0.1349% +0.1964%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 11.300 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/projective-different-claims-claim-aware/20
+                        time:   [35.850 ms 35.868 ms 35.901 ms]
+                        change: [-0.0432% +0.0895% +0.2129%] (p = 0.06 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-aware/20: Collecting 100 samples in estimated 12.365 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/delayed-claim-aware/20
+                        time:   [39.642 ms 39.651 ms 39.660 ms]
+                        change: [+0.0234% +0.1127% +0.1713%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  7 (7.00%) low mild
+  1 (1.00%) high mild
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 12.982 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/projective-different-claims-claim-unaware/20
+                        time:   [41.629 ms 41.646 ms 41.673 ms]
+                        change: [-0.1057% +0.0651% +0.1740%] (p = 0.26 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-aware/20: Collecting 100 samples in estimated 14.381 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/boolean-claim-aware/20
+                        time:   [46.280 ms 46.299 ms 46.335 ms]
+                        change: [+0.0375% +0.1281% +0.2343%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 11.227 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/projective-different-claims-delayed-claim-unaware/20
+                        time:   [35.936 ms 35.958 ms 35.982 ms]
+                        change: [+0.1362% +0.2571% +0.3500%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-unaware/20: Collecting 100 samples in estimated 10.912 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/BB5/projective-claim-unaware/20
+                        time:   [52.902 ms 52.956 ms 53.042 ms]
+                        change: [+0.4578% +0.6039% +0.7880%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-aware/20: Collecting 100 samples in estimated 14.672 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/BB5/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/BB5/projective-claim-aware/20
+                        time:   [47.213 ms 47.267 ms 47.331 ms]
+                        change: [+0.2743% +0.4864% +0.6621%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  3 (3.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking sumcheck_deg2/KB5/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/KB5/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/delayed-claim-unaware/20: Collecting 100 samples in estimated 11.569 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/KB5/delayed-claim-unaware/20
+                        time:   [36.913 ms 36.939 ms 36.967 ms]
+                        change: [-0.2427% +0.2755% +0.5019%] (p = 0.05 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  8 (8.00%) high mild
+Benchmarking sumcheck_deg2/KB5/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/KB5/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/flipped-claim-aware/20: Collecting 100 samples in estimated 11.706 s (400 iterations)
+Benchmarking sumcheck_deg2/KB5/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/KB5/flipped-claim-aware/20
+                        time:   [27.650 ms 27.777 ms 27.953 ms]
+                        change: [+0.2913% +0.7771% +1.3209%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 11.033 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/KB5/flipped_delayed-claim-unaware/20
+                        time:   [35.390 ms 35.559 ms 35.781 ms]
+                        change: [+0.5830% +1.0634% +1.6813%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 19 outliers among 100 measurements (19.00%)
+  1 (1.00%) high mild
+  18 (18.00%) high severe
+Benchmarking sumcheck_deg2/KB5/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/KB5/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/delayed-claim-aware/20: Collecting 100 samples in estimated 12.405 s (400 iterations)
+Benchmarking sumcheck_deg2/KB5/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/KB5/delayed-claim-aware/20
+                        time:   [29.257 ms 29.287 ms 29.339 ms]
+                        change: [+0.0072% +0.1359% +0.3208%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 11.057 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/KB5/proj_delayed-claim-unaware/20
+                        time:   [35.465 ms 35.615 ms 35.790 ms]
+                        change: [+0.5369% +0.9426% +1.4022%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 19 outliers among 100 measurements (19.00%)
+  1 (1.00%) high mild
+  18 (18.00%) high severe
+Benchmarking sumcheck_deg2/KB5/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/KB5/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/boolean-claim-aware/20: Collecting 100 samples in estimated 10.513 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/KB5/boolean-claim-aware/20
+                        time:   [33.431 ms 33.530 ms 33.647 ms]
+                        change: [+0.1788% +0.5489% +0.9252%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 22 outliers among 100 measurements (22.00%)
+  22 (22.00%) high severe
+Benchmarking sumcheck_deg2/KB5/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/KB5/flipped-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/flipped-claim-unaware/20: Collecting 100 samples in estimated 10.849 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/KB5/flipped-claim-unaware/20
+                        time:   [34.641 ms 34.652 ms 34.667 ms]
+                        change: [+0.1105% +0.1528% +0.1952%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 10.727 s (400 iterations)
+Benchmarking sumcheck_deg2/KB5/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/KB5/flipped_delayed-claim-aware/20
+                        time:   [25.306 ms 25.318 ms 25.335 ms]
+                        change: [-0.0054% +0.1018% +0.1928%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/KB5/projective-claim-aware/20
+Benchmarking sumcheck_deg2/KB5/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/projective-claim-aware/20: Collecting 100 samples in estimated 12.177 s (400 iterations)
+Benchmarking sumcheck_deg2/KB5/projective-claim-aware/20: Analyzing
+sumcheck_deg2/KB5/projective-claim-aware/20
+                        time:   [28.905 ms 28.927 ms 28.978 ms]
+                        change: [+0.0068% +0.1351% +0.3374%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 11.480 s (400 iterations)
+Benchmarking sumcheck_deg2/KB5/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/KB5/proj_delayed-claim-aware/20
+                        time:   [27.177 ms 27.189 ms 27.212 ms]
+                        change: [-0.6588% -0.1514% +0.1232%] (p = 0.44 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/KB5/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/KB5/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/projective-claim-unaware/20: Collecting 100 samples in estimated 12.136 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/KB5/projective-claim-unaware/20
+                        time:   [38.922 ms 38.935 ms 38.952 ms]
+                        change: [-0.0399% +0.0860% +0.1759%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/KB5/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/KB5/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/KB5/boolean-claim-unaware/20: Collecting 100 samples in estimated 12.627 s (300 iterations)
+Benchmarking sumcheck_deg2/KB5/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/KB5/boolean-claim-unaware/20
+                        time:   [40.348 ms 40.370 ms 40.418 ms]
+                        change: [+0.0912% +0.1535% +0.2705%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-aware/20: Collecting 100 samples in estimated 13.833 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/boolean-claim-aware/20
+                        time:   [44.087 ms 44.109 ms 44.138 ms]
+                        change: [-0.1009% +0.0870% +0.2045%] (p = 0.14 > 0.05)
+                        No change in performance detected.
+Found 14 outliers among 100 measurements (14.00%)
+  7 (7.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-aware/20: Collecting 100 samples in estimated 13.866 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/delayed-claim-aware/20
+                        time:   [44.529 ms 44.569 ms 44.621 ms]
+                        change: [+0.0662% +0.2098% +0.3394%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  4 (4.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 13.283 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-aware/20
+                        time:   [31.696 ms 31.718 ms 31.761 ms]
+                        change: [+0.0649% +0.1611% +0.3083%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 13.045 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/flipped-different-claims-claim-unaware/20
+                        time:   [41.976 ms 42.033 ms 42.143 ms]
+                        change: [+0.0567% +0.2522% +0.4993%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 13.491 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/proj_delayed-claim-aware/20
+                        time:   [43.421 ms 43.442 ms 43.473 ms]
+                        change: [-0.0120% +0.1065% +0.2072%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-unaware/20: Collecting 100 samples in estimated 10.885 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/boolean-claim-unaware/20
+                        time:   [52.576 ms 52.599 ms 52.632 ms]
+                        change: [-0.1711% -0.0212% +0.1052%] (p = 0.70 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 11.607 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/projective-different-claims-claim-aware/20
+                        time:   [37.102 ms 37.116 ms 37.134 ms]
+                        change: [+0.1145% +0.1696% +0.2214%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-aware/20: Collecting 100 samples in estimated 12.834 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/projective-claim-aware/20
+                        time:   [41.156 ms 41.187 ms 41.229 ms]
+                        change: [+0.1236% +0.2111% +0.3292%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.967 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-aware/20
+                        time:   [35.029 ms 35.034 ms 35.040 ms]
+                        change: [-0.2279% +0.0095% +0.1434%] (p = 0.91 > 0.05)
+                        No change in performance detected.
+Found 1 outliers among 100 measurements (1.00%)
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.099 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/proj_delayed-claim-unaware/20
+                        time:   [48.994 ms 49.040 ms 49.104 ms]
+                        change: [-0.3258% -0.1503% +0.0440%] (p = 0.04 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 13.052 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/projective-different-claims-claim-unaware/20
+                        time:   [41.977 ms 41.998 ms 42.035 ms]
+                        change: [+0.0130% +0.1458% +0.2619%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 10.939 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/KB5/flipped-different-claims-claim-aware/20
+                        time:   [34.893 ms 34.914 ms 34.949 ms]
+                        change: [-0.0190% +0.1185% +0.2559%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 12.941 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/projective-different-claims-delayed-claim-unaware/20
+                        time:   [41.611 ms 41.635 ms 41.667 ms]
+                        change: [-0.1589% +0.0143% +0.1536%] (p = 0.83 > 0.05)
+                        No change in performance detected.
+Found 11 outliers among 100 measurements (11.00%)
+  6 (6.00%) low mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-unaware/20: Collecting 100 samples in estimated 10.214 s (200 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/delayed-claim-unaware/20
+                        time:   [49.500 ms 49.513 ms 49.531 ms]
+                        change: [-0.0455% +0.0532% +0.1184%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-unaware/20: Collecting 100 samples in estimated 14.517 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/projective-claim-unaware/20
+                        time:   [46.698 ms 46.710 ms 46.732 ms]
+                        change: [+0.0352% +0.1111% +0.1802%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 13.367 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/KB5/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [43.025 ms 43.032 ms 43.039 ms]
+                        change: [-0.0723% +0.0354% +0.1085%] (p = 0.36 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 11.033 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/proj_delayed-claim-unaware/20
+                        time:   [21.290 ms 21.302 ms 21.328 ms]
+                        change: [+0.0587% +0.2224% +0.3856%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.219 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/projective_1inf_delayed-claim-unaware/20
+                        time:   [19.704 ms 19.717 ms 19.736 ms]
+                        change: [+0.1064% +0.2616% +0.3968%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-aware/20: Collecting 100 samples in estimated 10.429 s (400 iterations)
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/boolean-claim-aware/20
+                        time:   [25.327 ms 25.347 ms 25.374 ms]
+                        change: [+0.1782% +0.2615% +0.3761%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 16 outliers among 100 measurements (16.00%)
+  3 (3.00%) low severe
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  9 (9.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-unaware/20: Collecting 100 samples in estimated 12.531 s (400 iterations)
+Benchmarking sumcheck_deg2/Fp128/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/boolean-claim-unaware/20
+                        time:   [30.586 ms 30.610 ms 30.663 ms]
+                        change: [+0.1155% +0.2355% +0.4105%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 12 outliers among 100 measurements (12.00%)
+  5 (5.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 11.547 s (600 iterations)
+Benchmarking sumcheck_deg2/Fp128/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/proj_delayed-claim-aware/20
+                        time:   [18.492 ms 18.503 ms 18.519 ms]
+                        change: [+0.2576% +0.3293% +0.4216%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 13 outliers among 100 measurements (13.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-aware/20: Collecting 100 samples in estimated 10.794 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/flipped-claim-aware/20
+                        time:   [20.841 ms 20.854 ms 20.878 ms]
+                        change: [+0.2201% +0.2874% +0.3967%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-aware/20: Collecting 100 samples in estimated 10.962 s (600 iterations)
+Benchmarking sumcheck_deg2/Fp128/projective_1inf_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/projective_1inf_delayed-claim-aware/20
+                        time:   [17.531 ms 17.535 ms 17.541 ms]
+                        change: [+0.1823% +0.2531% +0.3083%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/projective-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/projective-claim-aware/20: Collecting 100 samples in estimated 12.484 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/projective-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/projective-claim-aware/20
+                        time:   [24.210 ms 24.221 ms 24.239 ms]
+                        change: [+0.0148% +0.1599% +0.2686%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-aware/20: Collecting 100 samples in estimated 11.878 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/projective_1inf-claim-aware/20
+                        time:   [23.010 ms 23.019 ms 23.035 ms]
+                        change: [+0.1458% +0.2102% +0.2891%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  5 (5.00%) low mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 11.608 s (700 iterations)
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/flipped_delayed-claim-aware/20
+                        time:   [15.823 ms 15.827 ms 15.831 ms]
+                        change: [+0.1497% +0.2484% +0.3052%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  7 (7.00%) low mild
+  1 (1.00%) high mild
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-unaware/20: Collecting 100 samples in estimated 12.244 s (400 iterations)
+Benchmarking sumcheck_deg2/Fp128/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/flipped-claim-unaware/20
+                        time:   [29.876 ms 29.899 ms 29.935 ms]
+                        change: [-0.5126% +0.0239% +0.3015%] (p = 0.91 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 11.044 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/flipped_delayed-claim-unaware/20
+                        time:   [21.331 ms 21.338 ms 21.351 ms]
+                        change: [-0.0811% +0.0829% +0.2020%] (p = 0.13 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-aware/20: Collecting 100 samples in estimated 10.625 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/Fp128/delayed-claim-aware/20
+                        time:   [20.507 ms 20.512 ms 20.522 ms]
+                        change: [+0.2249% +0.2664% +0.3170%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-unaware/20: Collecting 100 samples in estimated 11.989 s (500 iterations)
+Benchmarking sumcheck_deg2/Fp128/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/delayed-claim-unaware/20
+                        time:   [23.216 ms 23.220 ms 23.224 ms]
+                        change: [-0.1538% +0.0911% +0.2022%] (p = 0.26 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) low severe
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-unaware/20: Collecting 100 samples in estimated 11.804 s (400 iterations)
+Benchmarking sumcheck_deg2/Fp128/projective_1inf-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/projective_1inf-claim-unaware/20
+                        time:   [28.736 ms 28.748 ms 28.765 ms]
+                        change: [+0.1067% +0.1857% +0.2627%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 13 outliers among 100 measurements (13.00%)
+  7 (7.00%) low mild
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/Fp128/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/Fp128/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/Fp128/projective-claim-unaware/20: Collecting 100 samples in estimated 12.064 s (400 iterations)
+Benchmarking sumcheck_deg2/Fp128/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/Fp128/projective-claim-unaware/20
+                        time:   [29.411 ms 29.430 ms 29.460 ms]
+                        change: [+0.0671% +0.1846% +0.3021%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 15 outliers among 100 measurements (15.00%)
+  5 (5.00%) low mild
+  7 (7.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-unaware/20: Collecting 100 samples in estimated 12.520 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/boolean-claim-unaware/20
+                        time:   [40.844 ms 40.854 ms 40.867 ms]
+                        change: [+0.0755% +0.1321% +0.1831%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-aware/20: Collecting 100 samples in estimated 10.734 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective-claim-aware/20
+                        time:   [34.988 ms 35.012 ms 35.044 ms]
+                        change: [+0.0135% +0.1216% +0.2361%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) low mild
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-aware/20: Collecting 100 samples in estimated 11.365 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/boolean-claim-aware/20
+                        time:   [37.077 ms 37.101 ms 37.143 ms]
+                        change: [-0.2218% -0.0369% +0.1437%] (p = 0.61 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 12.146 s (500 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-aware/20
+                        time:   [23.636 ms 23.677 ms 23.744 ms]
+                        change: [+0.1695% +0.4318% +0.7529%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 10 outliers among 100 measurements (10.00%)
+  8 (8.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.931 s (500 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-aware/20
+                        time:   [21.117 ms 21.132 ms 21.152 ms]
+                        change: [+0.0553% +0.2044% +0.3261%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-unaware/20: Collecting 100 samples in estimated 11.858 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective_1inf-claim-unaware/20
+                        time:   [38.722 ms 38.740 ms 38.768 ms]
+                        change: [-0.1837% +0.0491% +0.2055%] (p = 0.58 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 12.689 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/proj_delayed-claim-unaware/20
+                        time:   [30.875 ms 30.918 ms 31.013 ms]
+                        change: [-0.1682% +0.1088% +0.4548%] (p = 0.40 > 0.05)
+                        No change in performance detected.
+Found 11 outliers among 100 measurements (11.00%)
+  4 (4.00%) low mild
+  3 (3.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 11.419 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/proj_delayed-claim-aware/20
+                        time:   [27.770 ms 27.782 ms 27.797 ms]
+                        change: [+0.0253% +0.1049% +0.1741%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-aware/20: Collecting 100 samples in estimated 10.603 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective_1inf-claim-aware/20
+                        time:   [34.559 ms 34.577 ms 34.617 ms]
+                        change: [+0.0380% +0.1330% +0.2937%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 4 outliers among 100 measurements (4.00%)
+  2 (2.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 10.755 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-unaware/20
+                        time:   [35.086 ms 35.105 ms 35.133 ms]
+                        change: [+0.0198% +0.1042% +0.1814%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 10.800 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective-different-claims-claim-unaware/20
+                        time:   [35.247 ms 35.276 ms 35.320 ms]
+                        change: [+0.0644% +0.1842% +0.3235%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 10.779 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective-different-claims-delayed-claim-unaware/20
+                        time:   [26.227 ms 26.260 ms 26.302 ms]
+                        change: [-1.3547% -0.1225% +0.4329%] (p = 0.82 > 0.05)
+                        No change in performance detected.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-unaware/20: Collecting 100 samples in estimated 12.048 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective-claim-unaware/20
+                        time:   [39.327 ms 39.341 ms 39.365 ms]
+                        change: [+0.0195% +0.1138% +0.1952%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  4 (4.00%) low mild
+  1 (1.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-aware/20: Collecting 100 samples in estimated 12.415 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/delayed-claim-aware/20
+                        time:   [30.256 ms 30.262 ms 30.269 ms]
+                        change: [-0.2503% -0.1139% +0.0024%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  6 (6.00%) low mild
+  2 (2.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-unaware/20: Collecting 100 samples in estimated 10.347 s (300 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/delayed-claim-unaware/20
+                        time:   [33.712 ms 33.728 ms 33.762 ms]
+                        change: [+0.0082% +0.0831% +0.2046%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-unaware/20: Collecting 100 samples in estimated 12.355 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-unaware/20
+                        time:   [30.137 ms 30.150 ms 30.172 ms]
+                        change: [-0.0782% +0.0449% +0.1540%] (p = 0.33 > 0.05)
+                        No change in performance detected.
+Found 6 outliers among 100 measurements (6.00%)
+  1 (1.00%) low mild
+  2 (2.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-aware/20: Collecting 100 samples in estimated 11.226 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective_1inf_delayed-claim-aware/20
+                        time:   [27.296 ms 27.309 ms 27.327 ms]
+                        change: [-0.1372% -0.0266% +0.0626%] (p = 0.52 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  4 (4.00%) low mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 12.314 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/projective-different-claims-claim-aware/20
+                        time:   [30.033 ms 30.044 ms 30.062 ms]
+                        change: [-0.0339% +0.0859% +0.1756%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 10.724 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/Fp128/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [26.033 ms 26.052 ms 26.086 ms]
+                        change: [+0.1707% +0.2576% +0.4025%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 10.950 s (400 iterations)
+Benchmarking sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/Fp128/flipped-different-claims-claim-aware/20
+                        time:   [26.625 ms 26.647 ms 26.690 ms]
+                        change: [-0.0322% +0.0992% +0.2619%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) low mild
+  4 (4.00%) high mild
+  3 (3.00%) high severe
+
+Benchmarking sumcheck_deg2/GF128/delayed-claim-aware/20
+Benchmarking sumcheck_deg2/GF128/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/delayed-claim-aware/20: Collecting 100 samples in estimated 10.373 s (1400 iterations)
+Benchmarking sumcheck_deg2/GF128/delayed-claim-aware/20: Analyzing
+sumcheck_deg2/GF128/delayed-claim-aware/20
+                        time:   [6.6719 ms 6.6796 ms 6.6889 ms]
+                        change: [-0.0330% +0.3006% +0.5725%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  3 (3.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2/GF128/projective-claim-aware/20
+Benchmarking sumcheck_deg2/GF128/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/projective-claim-aware/20: Collecting 100 samples in estimated 10.694 s (1300 iterations)
+Benchmarking sumcheck_deg2/GF128/projective-claim-aware/20: Analyzing
+sumcheck_deg2/GF128/projective-claim-aware/20
+                        time:   [7.4747 ms 7.4787 ms 7.4869 ms]
+                        change: [-0.1342% +0.0200% +0.1769%] (p = 0.75 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  6 (6.00%) low mild
+  2 (2.00%) high severe
+Benchmarking sumcheck_deg2/GF128/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/GF128/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/delayed-claim-unaware/20: Collecting 100 samples in estimated 10.294 s (1300 iterations)
+Benchmarking sumcheck_deg2/GF128/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/GF128/delayed-claim-unaware/20
+                        time:   [7.1791 ms 7.1841 ms 7.1913 ms]
+                        change: [-0.0774% +0.0744% +0.2085%] (p = 0.19 > 0.05)
+                        No change in performance detected.
+Found 17 outliers among 100 measurements (17.00%)
+  2 (2.00%) low mild
+  7 (7.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2/GF128/flipped-claim-unaware/20
+Benchmarking sumcheck_deg2/GF128/flipped-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/flipped-claim-unaware/20: Collecting 100 samples in estimated 10.531 s (1100 iterations)
+Benchmarking sumcheck_deg2/GF128/flipped-claim-unaware/20: Analyzing
+sumcheck_deg2/GF128/flipped-claim-unaware/20
+                        time:   [8.8295 ms 8.8348 ms 8.8418 ms]
+                        change: [+0.0361% +0.1447% +0.2357%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  2 (2.00%) high mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 10.164 s (1400 iterations)
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/GF128/proj_delayed-claim-aware/20
+                        time:   [6.5196 ms 6.5258 ms 6.5357 ms]
+                        change: [-0.0267% +0.1431% +0.3181%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 13 outliers among 100 measurements (13.00%)
+  6 (6.00%) high mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2/GF128/boolean-claim-aware/20
+Benchmarking sumcheck_deg2/GF128/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/boolean-claim-aware/20: Collecting 100 samples in estimated 10.001 s (1200 iterations)
+Benchmarking sumcheck_deg2/GF128/boolean-claim-aware/20: Analyzing
+sumcheck_deg2/GF128/boolean-claim-aware/20
+                        time:   [7.5846 ms 7.5879 ms 7.5920 ms]
+                        change: [+0.0239% +0.0991% +0.1635%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 9 outliers among 100 measurements (9.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.153 s (1300 iterations)
+Benchmarking sumcheck_deg2/GF128/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/GF128/proj_delayed-claim-unaware/20
+                        time:   [7.0679 ms 7.0729 ms 7.0807 ms]
+                        change: [+0.0733% +0.1513% +0.2599%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2/GF128/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2/GF128/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/boolean-claim-unaware/20: Collecting 100 samples in estimated 10.614 s (1100 iterations)
+Benchmarking sumcheck_deg2/GF128/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2/GF128/boolean-claim-unaware/20
+                        time:   [8.9037 ms 8.9056 ms 8.9079 ms]
+                        change: [+0.0417% +0.0723% +0.1045%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2/GF128/projective-claim-unaware/20
+Benchmarking sumcheck_deg2/GF128/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/projective-claim-unaware/20: Collecting 100 samples in estimated 10.489 s (1100 iterations)
+Benchmarking sumcheck_deg2/GF128/projective-claim-unaware/20: Analyzing
+sumcheck_deg2/GF128/projective-claim-unaware/20
+                        time:   [8.7952 ms 8.8080 ms 8.8294 ms]
+                        change: [-0.0083% +0.1682% +0.4417%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 14 outliers among 100 measurements (14.00%)
+  1 (1.00%) low mild
+  5 (5.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.159 s (1300 iterations)
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2/GF128/flipped_delayed-claim-unaware/20
+                        time:   [7.0679 ms 7.0721 ms 7.0802 ms]
+                        change: [+0.0186% +0.1221% +0.2241%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 6 outliers among 100 measurements (6.00%)
+  2 (2.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-aware/20
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-aware/20: Collecting 100 samples in estimated 10.588 s (1600 iterations)
+Benchmarking sumcheck_deg2/GF128/flipped_delayed-claim-aware/20: Analyzing
+sumcheck_deg2/GF128/flipped_delayed-claim-aware/20
+                        time:   [5.8689 ms 5.8712 ms 5.8745 ms]
+                        change: [-0.0691% +0.0620% +0.1463%] (p = 0.15 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) high mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2/GF128/flipped-claim-aware/20
+Benchmarking sumcheck_deg2/GF128/flipped-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2/GF128/flipped-claim-aware/20: Collecting 100 samples in estimated 10.570 s (1300 iterations)
+Benchmarking sumcheck_deg2/GF128/flipped-claim-aware/20: Analyzing
+sumcheck_deg2/GF128/flipped-claim-aware/20
+                        time:   [7.3748 ms 7.3782 ms 7.3846 ms]
+                        change: [+0.0538% +0.1210% +0.2345%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  2 (2.00%) low mild
+  3 (3.00%) high severe
+
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.181 s (1200 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-aware/20
+                        time:   [7.7444 ms 7.7534 ms 7.7644 ms]
+                        change: [+0.0614% +0.1735% +0.3274%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 11 outliers among 100 measurements (11.00%)
+  3 (3.00%) high mild
+  8 (8.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-aware/20: Collecting 100 samples in estimated 10.784 s (1100 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/proj_delayed-claim-aware/20
+                        time:   [9.0552 ms 9.0614 ms 9.0724 ms]
+                        change: [-0.0043% +0.1044% +0.2274%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-unaware/20: Collecting 100 samples in estimated 10.146 s (900 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/flipped-different-claims-claim-unaware/20
+                        time:   [10.536 ms 10.540 ms 10.547 ms]
+                        change: [+0.0028% +0.0504% +0.1130%] (p = 0.02 < 0.05)
+                        Change within noise threshold.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  4 (4.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-unaware/20: Collecting 100 samples in estimated 10.973 s (1000 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/proj_delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/proj_delayed-claim-unaware/20
+                        time:   [10.222 ms 10.227 ms 10.239 ms]
+                        change: [-0.0530% +0.0862% +0.2262%] (p = 0.07 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 10.350 s (1100 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/projective-different-claims-delayed-claim-unaware/20
+                        time:   [8.6707 ms 8.6755 ms 8.6826 ms]
+                        change: [-0.1916% -0.0508% +0.0773%] (p = 0.33 > 0.05)
+                        No change in performance detected.
+Found 7 outliers among 100 measurements (7.00%)
+  2 (2.00%) low mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-aware/20: Collecting 100 samples in estimated 10.097 s (900 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/boolean-claim-aware/20
+                        time:   [10.467 ms 10.476 ms 10.489 ms]
+                        change: [+0.0750% +0.1664% +0.3031%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 7 outliers among 100 measurements (7.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-aware/20: Collecting 100 samples in estimated 10.915 s (1100 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/delayed-claim-aware/20
+                        time:   [9.1615 ms 9.1638 ms 9.1661 ms]
+                        change: [-0.0213% +0.0301% +0.0726%] (p = 0.09 > 0.05)
+                        No change in performance detected.
+Found 2 outliers among 100 measurements (2.00%)
+  2 (2.00%) high mild
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-unaware/20: Collecting 100 samples in estimated 10.079 s (900 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/projective-different-claims-claim-unaware/20
+                        time:   [10.463 ms 10.474 ms 10.493 ms]
+                        change: [-0.0477% +0.0910% +0.3084%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  3 (3.00%) low mild
+  1 (1.00%) high mild
+  6 (6.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-aware/20: Collecting 100 samples in estimated 10.663 s (1100 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/projective-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/projective-different-claims-claim-aware/20
+                        time:   [8.9433 ms 8.9492 ms 8.9581 ms]
+                        change: [-0.2851% -0.0940% +0.0725%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Found 8 outliers among 100 measurements (8.00%)
+  1 (1.00%) low mild
+  7 (7.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-unaware/20: Collecting 100 samples in estimated 10.831 s (800 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/projective-claim-unaware/20
+                        time:   [12.787 ms 12.790 ms 12.793 ms]
+                        change: [-0.0074% +0.1086% +0.1865%] (p = 0.00 < 0.05)
+                        Change within noise threshold.
+Found 3 outliers among 100 measurements (3.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-aware/20: Collecting 100 samples in estimated 10.501 s (1100 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/flipped-different-claims-claim-aware/20
+                        time:   [8.8036 ms 8.8102 ms 8.8223 ms]
+                        change: [-0.0721% +0.0879% +0.2527%] (p = 0.17 > 0.05)
+                        No change in performance detected.
+Found 4 outliers among 100 measurements (4.00%)
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-unaware/20: Collecting 100 samples in estimated 10.652 s (800 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/boolean-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/boolean-claim-unaware/20
+                        time:   [12.568 ms 12.582 ms 12.600 ms]
+                        change: [+0.0069% +0.1537% +0.3108%] (p = 0.01 < 0.05)
+                        Change within noise threshold.
+Found 17 outliers among 100 measurements (17.00%)
+  1 (1.00%) low mild
+  6 (6.00%) high mild
+  10 (10.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-aware/20: Collecting 100 samples in estimated 11.105 s (1000 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/projective-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/projective-claim-aware/20
+                        time:   [10.355 ms 10.366 ms 10.381 ms]
+                        change: [-0.3516% +0.0386% +0.2917%] (p = 0.81 > 0.05)
+                        No change in performance detected.
+Found 9 outliers among 100 measurements (9.00%)
+  4 (4.00%) high mild
+  5 (5.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-unaware/20: Collecting 100 samples in estimated 10.109 s (900 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/delayed-claim-unaware/20
+                        time:   [10.474 ms 10.478 ms 10.483 ms]
+                        change: [-0.0138% +0.0496% +0.1073%] (p = 0.03 < 0.05)
+                        Change within noise threshold.
+Found 2 outliers among 100 measurements (2.00%)
+  1 (1.00%) high mild
+  1 (1.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-aware/20
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-aware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-aware/20: Collecting 100 samples in estimated 10.507 s (1300 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-aware/20: Analyzing
+sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-aware/20
+                        time:   [7.3422 ms 7.3486 ms 7.3607 ms]
+                        change: [-0.0146% +0.0902% +0.2714%] (p = 0.08 > 0.05)
+                        No change in performance detected.
+Found 5 outliers among 100 measurements (5.00%)
+  1 (1.00%) low mild
+  1 (1.00%) high mild
+  3 (3.00%) high severe
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-unaware/20
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-unaware/20: Warming up for 5.0000 s
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-unaware/20: Collecting 100 samples in estimated 10.265 s (1100 iterations)
+Benchmarking sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-unaware/20: Analyzing
+sumcheck_deg2_eq/GF128/flipped-different-claims-delayed-claim-unaware/20
+                        time:   [8.5791 ms 8.5837 ms 8.5904 ms]
+                        change: [-1.1222% -0.3538% -0.0258%] (p = 0.11 > 0.05)
+                        No change in performance detected.
+Found 10 outliers among 100 measurements (10.00%)
+  4 (4.00%) low mild
+  6 (6.00%) high severe
+

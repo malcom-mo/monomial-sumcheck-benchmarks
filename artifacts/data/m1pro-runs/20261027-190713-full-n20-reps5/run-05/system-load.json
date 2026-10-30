@@ -1,0 +1,30 @@
+[
+  {
+    "case_index": 1,
+    "command": [
+      "cargo",
+      "bench",
+      "--bench",
+      "sumcheck",
+      "--",
+      "/20$",
+      "--noplot"
+    ],
+    "before": {
+      "captured_at_utc": "2026-10-27T23:20:00.852322+00:00",
+      "load_average_1m": 1.3876953125,
+      "load_average_5m": 1.951171875,
+      "load_average_15m": 2.33544921875,
+      "logical_cpus": 10,
+      "load_1m_per_logical_cpu": 0.13876953125
+    },
+    "after": {
+      "captured_at_utc": "2026-10-28T00:38:05.673782+00:00",
+      "load_average_1m": 4.89501953125,
+      "load_average_5m": 4.28076171875,
+      "load_average_15m": 3.95654296875,
+      "logical_cpus": 10,
+      "load_1m_per_logical_cpu": 0.489501953125
+    }
+  }
+]

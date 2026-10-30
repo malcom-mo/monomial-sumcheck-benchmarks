@@ -1,0 +1,11 @@
+[
+  [
+    "cargo",
+    "bench",
+    "--bench",
+    "sumcheck",
+    "--",
+    "/20$",
+    "--noplot"
+  ]
+]
